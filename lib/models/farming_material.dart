@@ -1,0 +1,21 @@
+
+
+import 'package:gibt_1/models/models.dart';
+
+class FarmingMaterialData {
+  
+  final MaterialItem material;
+  final List<FarmingMaterialItemData> items;
+  final int quantity;
+
+  FarmingMaterialData({ required this.material, required this.quantity, required this.items });
+}
+
+class FarmingMaterialItemData {
+  
+  final AccountCharacter accountCharacter;
+  final int quantity;
+  final String type;
+
+  FarmingMaterialItemData({required this.accountCharacter, required this.quantity, required this.type,});
+}

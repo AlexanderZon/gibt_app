@@ -1,0 +1,19 @@
+version: '3'
+services:
+  gibt-mobile-crawler:
+    image: alexanderzon/gibt-crawler:latest
+    container_name: gibt-mobile-crawler
+    restart: always
+    ports:
+      - "9100:8000"
+    profiles:
+      - development
+    volumes:
+      - type: volume
+        source: gibt-mobile-crawler-volume
+        target: /app
+      -  "C:/docker/volumes/gibt-mobile-crawler:/app"
+
+volumes:
+  gibt-mobile-crawler-volume:
+    name: "gibt-mobile-crawler-volume"
