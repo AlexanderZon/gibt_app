@@ -1,6 +1,3 @@
-import 'dart:developer';
-
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:gibt_1/models/models.dart';
 import 'package:gibt_1/providers/account_characters_provider.dart';
@@ -149,12 +146,6 @@ class _CharacterFormScreenContent extends StatelessWidget {
             ]),
             CustomSwitch(label: 'Is Building?: ', formProperty: 'isBuilding', formValues: modelFormValues, onChange: saveCharacterData),
             const SizedBox(height: 10,),
-            // _SaveFormButton(
-            //   onPressed: () {
-            //     saveCharacterData();
-            //     Navigator.pop(context);
-            //   }
-            // )
           ],
         ),
       ),
@@ -176,30 +167,6 @@ class _DeleteCharacterConfirmDialogButton extends StatelessWidget {
       title: 'Delete Character',
       content: 'Are you sure to delete this character?',
       onConfirm: () => onDelete()
-    );
-  }
-}
-class _SaveFormButton extends StatelessWidget {
-  const _SaveFormButton({
-    super.key,
-    required this.onPressed
-  });
-
-  final Function onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.indigo,
-        ),
-        onPressed: () => onPressed(),
-        child: const Text('Save'),
-      ),
-
     );
   }
 }
@@ -328,7 +295,7 @@ class _CharacterFormImageDisplayerState extends State<_CharacterFormImageDisplay
                             height: double.infinity,
                             child: Image(
                               fit: weaponBoxFit,
-                              image: AssetImage('assets/weapons/${weapon.id}_${weaponImageType}.webp')
+                              image: AssetImage('assets/weapons/${weapon.id}_$weaponImageType.webp')
                             ),
                           ),
                           Column(

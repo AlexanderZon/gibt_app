@@ -14,11 +14,11 @@ class ElementInfoMaterialsGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final double spacing = 10;
-    final int itemsCounter = 5;
+    const double spacing = 10;
+    const int itemsCounter = 5;
     final itemDimensions = MediaQuery.of(context).size.width/itemsCounter+spacing;
 
-    return Container(
+    return SizedBox(
       height: (materials.length/5).ceil()*itemDimensions+20,
       child: GridView.count(
         primary: false,
@@ -31,8 +31,8 @@ class ElementInfoMaterialsGrid extends StatelessWidget {
           return ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: Container(
-              color: Color.fromARGB(125, 0, 0, 0),
-              padding: EdgeInsets.all(5),
+              color: const Color.fromARGB(125, 0, 0, 0),
+              padding: const EdgeInsets.all(5),
               child: Image(
                 image: AssetImage('assets/materials/${e.id}_icon.webp'),
                 height: double.infinity,

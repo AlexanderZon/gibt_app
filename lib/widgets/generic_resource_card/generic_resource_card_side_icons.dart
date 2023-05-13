@@ -40,7 +40,7 @@ class GenericResourceCardSideIconItem extends StatelessWidget {
     Widget getWidget () {
       if(data.image != null) {
         return FadeInImage(
-          placeholder: AssetImage('assets/no-image.jpg'),
+          placeholder: const AssetImage('assets/no-image.jpg'),
           image: AssetImage(data.image!)
         );
       } else if(data.text != null){
@@ -64,7 +64,7 @@ class GenericResourceCardSideIconItem extends StatelessWidget {
         Container(
           height: size,
           width: size,
-          margin: EdgeInsets.only(bottom: 5),
+          margin: const EdgeInsets.only(bottom: 5),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             color: data.color ?? Colors.black,
@@ -78,7 +78,7 @@ class GenericResourceCardSideIconItem extends StatelessWidget {
         ),
         
         if(data.hasMore == true)
-          Container(
+          SizedBox(
             height: size+3,
             width: size+3,
             child: Column(

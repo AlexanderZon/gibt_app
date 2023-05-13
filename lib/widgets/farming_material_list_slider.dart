@@ -21,7 +21,7 @@ class FarmingMaterialsListSlider extends StatelessWidget {
         width: double.infinity,
         height: 150,
         alignment: Alignment.center,
-        child: Text('There is no data')
+        child: const Text('There is no data')
       );
     }
 
@@ -45,7 +45,7 @@ class FarmingMaterialResourceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if(data.items.length == 0){
+    if(data.items.isEmpty){
       return GenericResourceCard(
         data: GenericResourceCardData(
           mainImage: 'assets/materials/${data.material.id}_icon.webp', 

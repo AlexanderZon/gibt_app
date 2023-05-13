@@ -5,7 +5,6 @@ import 'package:gibt_1/providers/characters_provider.dart';
 import 'package:gibt_1/providers/home_provider.dart';
 import 'package:gibt_1/providers/weapons_provider.dart';
 import 'package:gibt_1/screens/screens.dart';
-import 'package:gibt_1/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
 void main() => runApp(const AppState());
@@ -38,7 +37,7 @@ class AppState extends StatelessWidget {
           update: (_, accountCharacters, previousState) => previousState!..updates(accountCharacters.list, previousState)
         )
       ],
-      child: MyApp(),
+      child: const MyApp(),
     );
   }
 }

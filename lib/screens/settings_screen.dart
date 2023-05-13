@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gibt_1/widgets/widgets.dart';
 
 class SettingsScreen extends StatelessWidget {
    

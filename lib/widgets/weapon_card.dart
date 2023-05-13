@@ -1,10 +1,5 @@
-
-
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:gibt_1/models/models.dart';
-import 'package:gibt_1/models/weapon.dart';
 import 'package:gibt_1/widgets/widgets.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -45,8 +40,10 @@ class WeaponCard extends StatelessWidget {
           mainImage: 'assets/weapons/${data.weapon.id}_icon.webp', 
           text: data.weapon.name, 
           sideIcons: [
+            // ignore: unnecessary_null_comparison
             if(data.character != null)
               GenericResourceCardSideIconData(image: 'assets/characters/${data.character.id}_icon.webp'),
+            // ignore: unnecessary_null_comparison
             if(data.level != null)
               GenericResourceCardSideIconData(text: data.level),
           ], 

@@ -1,6 +1,3 @@
-
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 
 class SliderOptionsPicker extends StatefulWidget {
@@ -27,23 +24,19 @@ class SliderOptionsPicker extends StatefulWidget {
 
 class _SliderOptionsPickerState extends State<SliderOptionsPicker> {
 
-  final ScrollController scrollController = new ScrollController();
+  final ScrollController scrollController = ScrollController();
   
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    // log('init state');
     scrollController.addListener(() {
-      // log(scrollController.position.activity!.isScrolling);
-      // log('${scrollController.position.pixels} ${scrollController.position.maxScrollExtent}');
+      //
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    // if(widget.formValues[widget.formProperty] == '') widget.formValues[widget.formProperty] = widget.initialValue ?? widget.defaultValue;
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Column(
         children: [

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gibt_1/models/character.dart';
 
 class ElementHeaderSplashDisplayer extends StatelessWidget {
   const ElementHeaderSplashDisplayer({
@@ -21,7 +20,7 @@ class ElementHeaderSplashDisplayer extends StatelessWidget {
           ),
           child: Image.asset(asset),
         ),
-        Container(
+        SizedBox(
           width: double.infinity,
           height: 250,
           child: Column(

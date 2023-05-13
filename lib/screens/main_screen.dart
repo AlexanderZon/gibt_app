@@ -15,10 +15,10 @@ class _MainScreenState extends State<MainScreen> {
   int currentState = 0;
 
   List<Widget> screens = [
-    HomeScreen(),
-    CharactersScreen(),
-    WeaponsScreen(),
-    SettingsScreen(),
+    const HomeScreen(),
+    const CharactersScreen(),
+    const WeaponsScreen(),
+    const SettingsScreen(),
   ];
   
   @override

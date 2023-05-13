@@ -21,13 +21,13 @@ class HomeScreen extends StatelessWidget {
     final localMaterials = homeProvider.farmingLocalMaterials;
     final secondaryMaterials = homeProvider.farmingSecondaryMaterials;
     final commonMaterials = homeProvider.farmingCommonMaterials;
-
-    log('home screen bossMaterials ${bossMaterials.length}');
     
-    if(homeProvider.loading) return Scaffold(
-      appBar: AppBar(),
-      body: Center(child: CircularProgressIndicator(value: null))
-    );
+    if(homeProvider.loading) {
+      return Scaffold(
+        appBar: AppBar(),
+        body: const Center(child: CircularProgressIndicator(value: null))
+      );
+    }
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
@@ -55,22 +55,22 @@ class HomeScreen extends StatelessWidget {
             ),
             FarmingMaterialsListSlider(list: todayMaterials,),
             
-            HomeSlidersLabel(text: 'Boss Materials',),
+            const HomeSlidersLabel(text: 'Boss Materials',),
             FarmingMaterialsListSlider(list: bossMaterials,),
 
-            HomeSlidersLabel(text: 'Elemental Stones',),
+            const HomeSlidersLabel(text: 'Elemental Stones',),
             FarmingMaterialsListSlider(list: elementalStones,),
 
-            HomeSlidersLabel(text: 'Char Jewels',),
+            const HomeSlidersLabel(text: 'Char Jewels',),
             FarmingMaterialsListSlider(list: charJewels,),
 
-            HomeSlidersLabel(text: 'Local Materials',),
+            const HomeSlidersLabel(text: 'Local Materials',),
             FarmingMaterialsListSlider(list: localMaterials,),
 
-            HomeSlidersLabel(text: 'Secondary Materials',),
+            const HomeSlidersLabel(text: 'Secondary Materials',),
             FarmingMaterialsListSlider(list: secondaryMaterials,),
 
-            HomeSlidersLabel(text: 'Common Materials',),
+            const HomeSlidersLabel(text: 'Common Materials',),
             FarmingMaterialsListSlider(list: commonMaterials,),
           ],
         ),
@@ -90,11 +90,11 @@ class HomeSlidersLabel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Text(text, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),),
+          Text(text, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),),
         ],
       ),
     );

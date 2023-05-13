@@ -43,7 +43,7 @@ class CharactersScreen extends StatelessWidget {
       })
     ];
 
-    final double cardAspectRatio = 0.9;
+    const double cardAspectRatio = 0.9;
     
     return Scaffold(
       appBar: AppBar(),

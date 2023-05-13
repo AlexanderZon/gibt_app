@@ -1,7 +1,4 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:gibt_1/models/account_character.dart';
 import 'package:gibt_1/models/models.dart';
 import 'package:gibt_1/providers/account_characters_provider.dart';
 import 'package:gibt_1/providers/characters_provider.dart';
@@ -48,16 +45,22 @@ class WeaponsScreen extends StatelessWidget {
       },)
     ];
     list.sort((a, b) {
-      if(a.weapon.rarity > b.weapon.rarity) return -1;
-      else if(a.weapon.rarity < b.weapon.rarity) return 1;
-      else {
-        if(accountCharacterLevels.map[a.level]! > accountCharacterLevels.map[b.level]!) return -1;
-        else if(accountCharacterLevels.map[a.level]! < accountCharacterLevels.map[b.level]!) return 1;
-        else return 0;
+      if(a.weapon.rarity > b.weapon.rarity) {
+        return -1;
+      } else if(a.weapon.rarity < b.weapon.rarity) {
+        return 1;
+      } else {
+        if(accountCharacterLevels.map[a.level]! > accountCharacterLevels.map[b.level]!) {
+          return -1;
+        } else if(accountCharacterLevels.map[a.level]! < accountCharacterLevels.map[b.level]!) {
+          return 1;
+        } else {
+          return 0;
+        }
       };
     });
 
-    final double cardAspectRatio = 0.9;
+    const double cardAspectRatio = 0.9;
     
     return Scaffold(
       appBar: AppBar(),

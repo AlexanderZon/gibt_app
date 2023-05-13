@@ -15,11 +15,10 @@ class ElementInfoBackground extends StatelessWidget {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      child: Text(''),
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-          colorFilter: new ColorFilter.mode(Colors.white.withOpacity(1), BlendMode.dstATop),
+          colorFilter: ColorFilter.mode(Colors.white.withOpacity(1), BlendMode.dstATop),
           image: AssetImage(asset)
         )
       ),

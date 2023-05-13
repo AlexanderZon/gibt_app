@@ -28,25 +28,29 @@ class CharacterWeaponSelectScreen extends StatelessWidget {
 
     final weaponsList = weaponsProvider.onDisplayWeapons;
     final charactersList = charactersProvider.onDisplayCharacters;
-    log('character ${accountCharacter.character}');
     final character = charactersList.firstWhere((element) => element.id == accountCharacter.characterId,);
     final actualWeapon = weaponsList.firstWhere((element) => element.id == accountCharacter.weaponId,);
 
     BoxFit imageBoxFit = BoxFit.cover;
     List<Weapon> availableWeapons = [];
+    // ignore: unnecessary_null_comparison
     if(character != null){
       availableWeapons = weaponsList.where((element) {
         return element.weaponType == character.weaponType;
       },).toList();
       availableWeapons.sort((a, b) {
-        if(a.rarity > b.rarity) return -1;
-        else if(a.rarity < b.rarity) return 1;
-        else return 0;
+        if(a.rarity > b.rarity) {
+          return -1;
+        } else if(a.rarity < b.rarity) {
+          return 1;
+        } else {
+          return 0;
+        }
       },);
       if(character.weaponType == WeaponType.CATALYST) imageBoxFit = BoxFit.contain;
     }
     
-    final double cardAspectRatio = 0.9;
+    const double cardAspectRatio = 0.9;
     final sideIconsSize = ((cardMaxWidth/cardAspectRatio)-30)/3;
 
     return Scaffold(
@@ -63,6 +67,7 @@ class CharacterWeaponSelectScreen extends StatelessWidget {
         children: availableWeapons.map((e) => GestureDetector (
           onTap: () {
             accountCharacter.weaponId = e.id;
+            // ignore: unnecessary_null_comparison
             if(actualWeapon != null && actualWeapon.rarity != e.rarity){
               accountCharacter.weapLevel = '1';
               accountCharacter.weapRank = 1;
