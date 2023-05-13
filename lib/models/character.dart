@@ -33,17 +33,17 @@ class Character {
   _Association association;
   int rarity;
   WeaponType weaponType;
-  _Element element;
+  Element element;
   String dayOfBirth;
   String monthOfBirth;
-  _Vision vision;
+  Vision vision;
   String constellation;
   String description;
   List<DescriptionAscensionMaterial> ascensionMaterials;
   List<DescriptionAscensionMaterial> skillAscensionMaterials;
   List<CharacterStat> stats;
   List<CharacterSkill> skills;
-  _Vision? visionDiscovered;
+  Vision? visionDiscovered;
   String? constellationDiscovered;
 
   factory Character.fromRawJson(String str) =>
@@ -99,46 +99,68 @@ class Character {
         "skills": List<dynamic>.from(skills.map((x) => x)),
       };
 
-  bool isUsingMaterial(MaterialItem material) { 
+  bool isUsingMaterial(MaterialItem material) {
     return this.ascensionMaterials.any((asc_mat) => asc_mat.id == material.id);
   }
-  bool isUsingSkillMaterial(MaterialItem material) { 
-    return this.skillAscensionMaterials.any((asc_mat) => asc_mat.id == material.id);
+
+  bool isUsingSkillMaterial(MaterialItem material) {
+    return this
+        .skillAscensionMaterials
+        .any((asc_mat) => asc_mat.id == material.id);
   }
-  int getSkillsMaterialQuantity (MaterialItem material, {
-    int basicTalentLevel = 1, 
-    int elementalTalentLevel = 1, 
+
+  int getSkillsMaterialQuantity(
+    MaterialItem material, {
+    int basicTalentLevel = 1,
+    int elementalTalentLevel = 1,
     int burstTalentLevel = 1,
-    int toBasicTalentLevel = 9, 
-    int toElementalTalentLevel = 9, 
+    int toBasicTalentLevel = 9,
+    int toElementalTalentLevel = 9,
     int toBurstTalentLevel = 9,
   }) {
     int quantity = 0;
-    for(int i = 0; i < this.skills.length; i++){
+    for (int i = 0; i < this.skills.length; i++) {
       var lvl = int.parse(this.skills[i].level);
-      if(lvl > basicTalentLevel || lvl > elementalTalentLevel || lvl > burstTalentLevel){
-        if(this.skills[i].materials.any((element) => element.id == material.id)){
-          var skillMaterial = this.skills[i].materials.firstWhere((element) => element.id == material.id);
-          if(lvl > basicTalentLevel && lvl <= toBasicTalentLevel) quantity += int.parse(skillMaterial.quantity);
-          if(lvl > elementalTalentLevel && lvl <= toElementalTalentLevel) quantity += int.parse(skillMaterial.quantity);
-          if(lvl > burstTalentLevel && lvl <= toBurstTalentLevel) quantity += int.parse(skillMaterial.quantity);
+      if (lvl > basicTalentLevel ||
+          lvl > elementalTalentLevel ||
+          lvl > burstTalentLevel) {
+        if (this
+            .skills[i]
+            .materials
+            .any((element) => element.id == material.id)) {
+          var skillMaterial = this
+              .skills[i]
+              .materials
+              .firstWhere((element) => element.id == material.id);
+          if (lvl > basicTalentLevel && lvl <= toBasicTalentLevel)
+            quantity += int.parse(skillMaterial.quantity);
+          if (lvl > elementalTalentLevel && lvl <= toElementalTalentLevel)
+            quantity += int.parse(skillMaterial.quantity);
+          if (lvl > burstTalentLevel && lvl <= toBurstTalentLevel)
+            quantity += int.parse(skillMaterial.quantity);
         }
       }
     }
     return quantity;
   }
 
-  int getStatMaterialQuantity (MaterialItem material, {
-    String level = '1', 
-    String toLevel = '90', 
+  int getStatMaterialQuantity(
+    MaterialItem material, {
+    String level = '1',
+    String toLevel = '90',
   }) {
     int quantity = 0;
     var lvl = accountCharacterLevels.map[level]!;
     var toLvl = accountCharacterLevels.map[toLevel]!;
-    for(int i = 0; i < this.stats.length; i++){
+    for (int i = 0; i < this.stats.length; i++) {
       var statLvl = accountCharacterLevels.map[this.stats[i].level]!;
-      if(lvl < statLvl && statLvl < toLvl && this.stats[i].materials.any((element) => element.id == material.id)){
-        var statMaterial = this.stats[i].materials.firstWhere((element) => element.id == material.id);
+      if (lvl < statLvl &&
+          statLvl < toLvl &&
+          this.stats[i].materials.any((element) => element.id == material.id)) {
+        var statMaterial = this
+            .stats[i]
+            .materials
+            .firstWhere((element) => element.id == material.id);
         quantity += int.parse(statMaterial.quantity);
       }
     }
@@ -157,18 +179,18 @@ final associationValues = EnumValues({
   "Sumeru": _Association.SUMERU
 });
 
-enum _Element { UNKNOWN }
+enum Element { UNKNOWN }
 
-final elementValues = EnumValues({"unknown": _Element.UNKNOWN});
+final elementValues = EnumValues({"unknown": Element.UNKNOWN});
 
-enum _Vision { CRYO, ANEMO, ELECTRO, HYDRO, PYRO, GEO, DENDRO }
+enum Vision { CRYO, ANEMO, ELECTRO, HYDRO, PYRO, GEO, DENDRO }
 
 final visionValues = EnumValues({
-  "Anemo": _Vision.ANEMO,
-  "Cryo": _Vision.CRYO,
-  "Dendro": _Vision.DENDRO,
-  "Electro": _Vision.ELECTRO,
-  "Geo": _Vision.GEO,
-  "Hydro": _Vision.HYDRO,
-  "Pyro": _Vision.PYRO
+  "Anemo": Vision.ANEMO,
+  "Cryo": Vision.CRYO,
+  "Dendro": Vision.DENDRO,
+  "Electro": Vision.ELECTRO,
+  "Geo": Vision.GEO,
+  "Hydro": Vision.HYDRO,
+  "Pyro": Vision.PYRO
 });

@@ -63,4 +63,25 @@ class Weapon {
         return 'i_n11101';
     }
   }
+
+  bool isUsingMaterial(MaterialItem material) {
+    return this.ascensionMaterials.any((asc_mat) => asc_mat.id == material.id);
+  }
+
+  int getStatMaterialQuantity (MaterialItem material, {
+    String level = '1', 
+    String toLevel = '90', 
+  }) {
+    int quantity = 0;
+    var lvl = accountCharacterLevels.map[level]!;
+    var toLvl = accountCharacterLevels.map[toLevel]!;
+    for(int i = 0; i < this.stats.length; i++){
+      var statLvl = accountCharacterLevels.map[this.stats[i].level]!;
+      if(lvl < statLvl && statLvl < toLvl && this.stats[i].materials.any((element) => element.id == material.id)){
+        var statMaterial = this.stats[i].materials.firstWhere((element) => element.id == material.id);
+        quantity += int.parse(statMaterial.quantity);
+      }
+    }
+    return quantity;
+  }
 }

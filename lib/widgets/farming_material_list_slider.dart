@@ -56,20 +56,25 @@ class FarmingMaterialResourceCard extends StatelessWidget {
       );
     } else {
       final firstAccountCharacter = data.items[0];
-      return GenericResourceCard(
-        data: GenericResourceCardData(
-          mainImage: 'assets/materials/${data.material.id}_icon.webp', 
-          text: '${data.quantity}', 
-          sideIcons: [
-            GenericResourceCardSideIconData(image: 'assets/characters/${firstAccountCharacter.accountCharacter.characterId}_icon.webp'),
-            if(firstAccountCharacter.type == 'weapon')
-              GenericResourceCardSideIconData(image: 'assets/weapons/${firstAccountCharacter.accountCharacter.weaponId}_icon.webp'),
-            if(firstAccountCharacter.type != 'weapon')
-              GenericResourceCardSideIconData(image: 'assets/miscellaneous/${firstAccountCharacter.type}.webp'),
-          ], 
-          stars: data.material.rarity
+      return GestureDetector(
+        onTap: () {
+          Navigator.pushNamed(context, 'farming_material_details', arguments: data);
+        },
+        child: GenericResourceCard(
+          data: GenericResourceCardData(
+            mainImage: 'assets/materials/${data.material.id}_icon.webp', 
+            text: '${data.quantity}', 
+            sideIcons: [
+              GenericResourceCardSideIconData(image: 'assets/characters/${firstAccountCharacter.accountCharacter.characterId}_icon.webp'),
+              if(firstAccountCharacter.type == 'weapon')
+                GenericResourceCardSideIconData(image: 'assets/weapons/${firstAccountCharacter.accountCharacter.weaponId}_icon.webp'),
+              if(firstAccountCharacter.type != 'weapon')
+                GenericResourceCardSideIconData(image: 'assets/miscellaneous/${firstAccountCharacter.type}.webp', hasMore: data.items.length > 1),
+            ], 
+            stars: data.material.rarity
+          ),
+          boxFit: BoxFit.contain,
         ),
-        boxFit: BoxFit.contain,
       );
     }
   }

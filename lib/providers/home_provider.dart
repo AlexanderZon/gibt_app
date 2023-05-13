@@ -12,21 +12,38 @@ class HomeProvider extends ChangeNotifier {
 
   bool loading = false;
 
+  DateTime farmingDay = DateTime.now();
   List<AccountCharacter> buildingCharacters = [];
   List<MaterialItem> materialsList = [];
   List<Character> charactersList = [];
   List<Weapon> weaponsList = [];
 
+  List<FarmingMaterialData> farmingTodayMaterials = [];
   List<FarmingMaterialData> farmingBossMaterials = [];
   List<FarmingMaterialData> farmingElementalStones = [];
   List<FarmingMaterialData> farmingCharJewels = [];
   List<FarmingMaterialData> farmingLocalMaterials = [];
+  List<FarmingMaterialData> farmingSecondaryMaterials = [];
+  List<FarmingMaterialData> farmingCommonMaterials = [];
 
   HomeProvider() {
     loading = true;
-    log('HomeProvider');
+    log('HomeProvider ${farmingDay.weekday} ${Weekday.values[farmingDay.weekday-1]}');
     notifyListeners();
     getOnDisplayMaterials();
+  }
+
+  String get farmingDate {
+    return '${farmingDay.year}/${farmingDay.month < 10 ? "0" : ""}${farmingDay.month}/${farmingDay.day < 10 ? "0" : ""}${farmingDay.day}';
+  }
+
+  String get farmingDateDay {
+    var now = DateTime.now();
+    if(now.year == farmingDay.year && now.month == farmingDay.month && now.day == farmingDay.day){
+      return 'Today';
+    } else {
+      return weekdayValues.reverse[Weekday.values[farmingDay.weekday-1]]!;
+    }
   }
 
   Future<String> readJson(String data) async {
@@ -38,6 +55,28 @@ class HomeProvider extends ChangeNotifier {
   void updates(List<AccountCharacter> accountCharacters, HomeProvider previousState){
     this.buildingCharacters = accountCharacters.where((element) => element.isBuilding).toList();
     getOnDisplayMaterials();
+  }
+
+  bool get canAddDay {
+    var now = DateTime.now();
+    return (now.difference(farmingDay).inHours/24).round() > -3;
+  }
+
+  bool get canSubDay {
+    var now = DateTime.now();
+    return (now.difference(farmingDay).inHours/24).round() < 3;
+  }
+
+  void addFarmingDay(){
+    farmingDay = farmingDay.add(Duration(days: 1));
+    getFarmingTodayMaterials();
+    notifyListeners();
+  }
+
+  void subFarmingDay(){
+    farmingDay = farmingDay.subtract(Duration(days: 1));
+    getFarmingTodayMaterials();
+    notifyListeners();
   }
 
   getOnDisplayMaterials() async {
@@ -59,33 +98,52 @@ class HomeProvider extends ChangeNotifier {
       return e;
     }).toList();
 
+    getFarmingTodayMaterials();
+  
     var bossMaterials = _filterMaterialsByType(AscensionMaterialType.BOSS_ITEM);
-    farmingBossMaterials = _constructSkillFarminMaterialList(bossMaterials);
+    farmingBossMaterials = _constructSkillFarmingMaterialList(bossMaterials);
 
     var elementalStones = _filterMaterialsByType(AscensionMaterialType.ELEMENTAL_STONE);
-    farmingElementalStones = _constructStatFarmingMaterialList(elementalStones);
+    farmingElementalStones = _constructStatCharacterFarmingMaterialList(elementalStones);
 
     var charJewels = _filterMaterialsByType(AscensionMaterialType.JEWEL);
-    farmingCharJewels = _constructStatFarmingMaterialList(charJewels);
+    farmingCharJewels = _constructStatCharacterFarmingMaterialList(charJewels);
 
     var localMaterials = _filterMaterialsByType(AscensionMaterialType.LOCAL_MATERIAL);
-    farmingLocalMaterials = _constructStatFarmingMaterialList(localMaterials);
+    farmingLocalMaterials = _constructStatCharacterFarmingMaterialList(localMaterials);
+
+    var secondaryAscensionMaterial = _filterMaterialsByType(AscensionMaterialType.SECONDARY_ASCENSION_MATERIAL);
+    farmingSecondaryMaterials = _constructStatWeaponFarmingMaterialList(secondaryAscensionMaterial);
+
+    var commonMaterials = _filterMaterialsByType(AscensionMaterialType.COMMON_ITEM);
+    farmingCommonMaterials = _constructCommonFarmingMaterialList(commonMaterials);
 
     loading = false;
     notifyListeners();
   }
 
+  void getFarmingTodayMaterials(){
+    var actualWeekDay = Weekday.values[farmingDay.weekday-1];
+    var bookMaterials = _filterMaterialsByWeekDayAndType(AscensionMaterialType.BOOK, actualWeekDay);
+    var primaryMaterials = _filterMaterialsByWeekDayAndType(AscensionMaterialType.PRIMARY_ASCENSION_MATERIAL, actualWeekDay);
+    farmingTodayMaterials = _constructSkillFarmingMaterialList(bookMaterials);
+    farmingTodayMaterials = [...farmingTodayMaterials, ..._constructStatWeaponFarmingMaterialList(primaryMaterials)];
+  }
+
+  bool _filterFarmingMaterialItemData(element) => element.quantity > 0;
+
   bool _filterFarmingMaterialData(element) => element.quantity > 0 && element.items.length > 0;
 
   List<MaterialItem> _filterMaterialsByType(AscensionMaterialType type) {
-    return materialsList.where((element) {
-        if(element.materialType == type) return true;
-        return false;
-    },).toList();
+    return materialsList.where((element) => element.materialType == type).toList();
   }
 
-  List<FarmingMaterialData> _constructSkillFarminMaterialList(List<MaterialItem> material){
-    return material.map((element) {
+  List<MaterialItem> _filterMaterialsByWeekDayAndType(AscensionMaterialType type, Weekday weekday) {
+    return _filterMaterialsByType(type).where((element) => element.weekdays.any((wd) => wd == weekday)).toList();
+  }
+
+  List<FarmingMaterialData> _constructSkillFarmingMaterialList(List<MaterialItem> materials){
+    return materials.map((element) {
       var charactersUsingMaterial = buildingCharacters.where((e) => e.character!.isUsingSkillMaterial(element));
       if(charactersUsingMaterial.isEmpty) return FarmingMaterialData(material: element, quantity: 0, items: []);
       else {
@@ -94,15 +152,14 @@ class HomeProvider extends ChangeNotifier {
           int quantity = e.character!.getSkillsMaterialQuantity(element, basicTalentLevel: e.basicTalentLevel, elementalTalentLevel: e.elementalTalentLevel, burstTalentLevel: e.burstTalentLevel);
           total += quantity;
           return FarmingMaterialItemData(accountCharacter: e, quantity: quantity, type: 'tallent');
-        }).toList();
-
+        }).where(_filterFarmingMaterialItemData).toList();
         return FarmingMaterialData(material: element, quantity: total, items: items);
       }
     }).where(_filterFarmingMaterialData).toList();
   }
 
-  List<FarmingMaterialData> _constructStatFarmingMaterialList(List<MaterialItem> material){
-    return material.map((element) {
+  List<FarmingMaterialData> _constructStatCharacterFarmingMaterialList(List<MaterialItem> materials){
+    return materials.map((element) {
       var charactersUsingMaterial = buildingCharacters.where((e) => e.character!.isUsingMaterial(element));
       if(charactersUsingMaterial.isEmpty) return FarmingMaterialData(material: element, quantity: 0, items: []);
       else {
@@ -111,9 +168,51 @@ class HomeProvider extends ChangeNotifier {
           int quantity = e.character!.getStatMaterialQuantity(element, level: e.level);
           total += quantity;
           return FarmingMaterialItemData(accountCharacter: e, quantity: quantity, type: 'char');
-        }).toList();
+        }).where(_filterFarmingMaterialItemData).toList();
         return FarmingMaterialData(material: element, quantity: total, items: items);
       }
     },).where(_filterFarmingMaterialData).toList();
+  }
+
+  List<FarmingMaterialData> _constructStatWeaponFarmingMaterialList(List<MaterialItem> materials){
+    return materials.map((element) {
+      var weaponsUsingMaterial = buildingCharacters.where((e) => e.weapon!.isUsingMaterial(element));
+      if(weaponsUsingMaterial.isEmpty) return FarmingMaterialData(material: element, quantity: 0, items: []);
+      else {
+        int total = 0;
+        List<FarmingMaterialItemData> items = weaponsUsingMaterial.map((e){
+          int quantity = e.weapon!.getStatMaterialQuantity(element, level: e.weapLevel);
+          total += quantity;
+          return FarmingMaterialItemData(accountCharacter: e, quantity: quantity, type: 'weapon');
+        }).where(_filterFarmingMaterialItemData).toList();
+        return FarmingMaterialData(material: element, quantity: total, items: items);
+      }
+    },).where(_filterFarmingMaterialData).toList();
+  }
+
+  List<FarmingMaterialData> _constructCommonFarmingMaterialList(List<MaterialItem> materials){
+    
+    var skillsMaterials = _constructSkillFarmingMaterialList(materials);
+    var charStatsMaterials = _constructStatCharacterFarmingMaterialList(materials);
+    var weapStatsMaterials = _constructStatWeaponFarmingMaterialList(materials);
+    var list = [...skillsMaterials];
+    list = _appendCommonMaterials(list, charStatsMaterials);
+    list = _appendCommonMaterials(list, weapStatsMaterials);
+
+    return list;
+  }
+
+  List<FarmingMaterialData> _appendCommonMaterials(List<FarmingMaterialData> list, List<FarmingMaterialData> elements){
+    for(int i = 0; i < elements.length; i++){
+      if(list.any((element) => element.material.id == elements[i].material.id)) {
+        var fcm = list.firstWhere((element) => element.material.id == elements[i].material.id);
+        var index = list.indexOf(fcm);
+        list[index].items = [...list[index].items, ...elements[i].items];
+        list[index].quantity = list[index].quantity+elements[i].quantity;
+      } else {
+        list.add(elements[i]);
+      }
+    }
+    return list;
   }
 }

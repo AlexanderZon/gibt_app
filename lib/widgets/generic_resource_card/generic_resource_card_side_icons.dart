@@ -59,20 +59,56 @@ class GenericResourceCardSideIconItem extends StatelessWidget {
       }
     };
 
-    return Container(
-      height: size,
-      width: size,
-      margin: EdgeInsets.only(bottom: 5),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color: data.color ?? Colors.black,
-        border: Border.all(color: Colors.white, width: 2),
+    return Stack(
+      children: [
+        Container(
+          height: size,
+          width: size,
+          margin: EdgeInsets.only(bottom: 5),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: data.color ?? Colors.black,
+            border: Border.all(color: Colors.white, width: 2),
+            
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: getWidget() ,
+          )
+        ),
         
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: getWidget() ,
-      )
+        if(data.hasMore == true)
+          Container(
+            height: size+3,
+            width: size+3,
+            child: Column(
+              children: [
+                Expanded(child: Container()),
+                Row(
+                  children: [
+                    Expanded(child: Container()),
+                    Container(
+                      height: size/2,
+                      width: size/2,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: data.color ?? Colors.black,
+                        border: Border.all(color: Colors.white, width: 2),
+                        
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Center(
+                          child: Icon(Icons.add, color: Colors.white, size: iconSize/2,)
+                        ) ,
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          )
+      ],
     );
   }
 }
@@ -83,5 +119,12 @@ class GenericResourceCardSideIconData {
   final String? text;
   final IconData? icon;
   final Color? color;
-  GenericResourceCardSideIconData({ this.image, this.text, this.icon, this.color});
+  bool? hasMore = false;
+  GenericResourceCardSideIconData({ 
+    this.image, 
+    this.text, 
+    this.icon, 
+    this.color,
+    this.hasMore
+  });
 }

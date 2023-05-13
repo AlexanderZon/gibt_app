@@ -60,14 +60,14 @@ final materialTypeValues = EnumValues({
     "SecondaryAscensionMaterial,": AscensionMaterialType.SECONDARY_ASCENSION_MATERIAL
 });
 
-enum Weekday { TUESDAY, FRIDAY, SUNDAY, WEDNESDAY, SATURDAY, MONDAY, THURSDAY }
+enum Weekday { MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY }
 
 final weekdayValues = EnumValues({
-    "Sunday": Weekday.SUNDAY,
     "Monday": Weekday.MONDAY,
     "Tuesday": Weekday.TUESDAY,
     "Wednesday": Weekday.WEDNESDAY,
     "Thursday": Weekday.THURSDAY,
     "Friday": Weekday.FRIDAY,
     "Saturday": Weekday.SATURDAY,
+    "Sunday": Weekday.SUNDAY,
 });

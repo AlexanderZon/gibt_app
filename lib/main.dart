@@ -60,6 +60,7 @@ class MyApp extends StatelessWidget {
         'character_info': ( _ ) => const CharacterInfoScreen(),
         'weapon_info': ( _ ) => const WeaponInfoScreen(),
         'character_weapon_select': ( _ ) => const CharacterWeaponSelectScreen(),
+        'farming_material_details': ( _ ) => const FarmingMaterialDetailsScreen(),
       },
       theme: ThemeData.light().copyWith(
         primaryColor: Colors.indigo,
