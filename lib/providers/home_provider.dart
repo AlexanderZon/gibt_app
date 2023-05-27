@@ -1,12 +1,7 @@
 import 'dart:async';
-import 'dart:convert';
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gibt_1/models/models.dart';
-import 'package:gibt_1/providers/account_characters_provider.dart';
-import 'package:provider/provider.dart';
 
 class HomeProvider extends ChangeNotifier {
 
@@ -28,7 +23,6 @@ class HomeProvider extends ChangeNotifier {
 
   HomeProvider() {
     loading = true;
-    log('HomeProvider ${farmingDay.weekday} ${Weekday.values[farmingDay.weekday-1]}');
     notifyListeners();
     getOnDisplayMaterials();
   }
@@ -48,12 +42,12 @@ class HomeProvider extends ChangeNotifier {
 
   Future<String> readJson(String data) async {
     final String response = 
-          await rootBundle.loadString('assets/data/${data}.json');
+          await rootBundle.loadString('assets/data/$data.json');
     return response;
   }
 
   void updates(List<AccountCharacter> accountCharacters, HomeProvider previousState){
-    this.buildingCharacters = accountCharacters.where((element) => element.isBuilding).toList();
+    buildingCharacters = accountCharacters.where((element) => element.isBuilding).toList();
     getOnDisplayMaterials();
   }
 
@@ -68,13 +62,13 @@ class HomeProvider extends ChangeNotifier {
   }
 
   void addFarmingDay(){
-    farmingDay = farmingDay.add(Duration(days: 1));
+    farmingDay = farmingDay.add(const Duration(days: 1));
     getFarmingTodayMaterials();
     notifyListeners();
   }
 
   void subFarmingDay(){
-    farmingDay = farmingDay.subtract(Duration(days: 1));
+    farmingDay = farmingDay.subtract(const Duration(days: 1));
     getFarmingTodayMaterials();
     notifyListeners();
   }
@@ -144,9 +138,11 @@ class HomeProvider extends ChangeNotifier {
 
   List<FarmingMaterialData> _constructSkillFarmingMaterialList(List<MaterialItem> materials){
     return materials.map((element) {
-      var charactersUsingMaterial = buildingCharacters.where((e) => e.character!.isUsingSkillMaterial(element));
-      if(charactersUsingMaterial.isEmpty) return FarmingMaterialData(material: element, quantity: 0, items: []);
-      else {
+      var charactersUsingMaterial = buildingCharacters.where((e) => e.character!.isUsingMaterial(element) || e.character!.isUsingSkillMaterial(element));
+
+      if(charactersUsingMaterial.isEmpty) {
+        return FarmingMaterialData(material: element, quantity: 0, items: []);
+      } else {
         int total = 0;
         List<FarmingMaterialItemData> items = charactersUsingMaterial.map((e){
           int quantity = e.character!.getSkillsMaterialQuantity(element, basicTalentLevel: e.basicTalentLevel, elementalTalentLevel: e.elementalTalentLevel, burstTalentLevel: e.burstTalentLevel);
@@ -161,8 +157,9 @@ class HomeProvider extends ChangeNotifier {
   List<FarmingMaterialData> _constructStatCharacterFarmingMaterialList(List<MaterialItem> materials){
     return materials.map((element) {
       var charactersUsingMaterial = buildingCharacters.where((e) => e.character!.isUsingMaterial(element));
-      if(charactersUsingMaterial.isEmpty) return FarmingMaterialData(material: element, quantity: 0, items: []);
-      else {
+      if(charactersUsingMaterial.isEmpty) {
+        return FarmingMaterialData(material: element, quantity: 0, items: []);
+      } else {
         int total = 0;
         List<FarmingMaterialItemData> items = charactersUsingMaterial.map((e){
           int quantity = e.character!.getStatMaterialQuantity(element, level: e.level);
@@ -177,8 +174,9 @@ class HomeProvider extends ChangeNotifier {
   List<FarmingMaterialData> _constructStatWeaponFarmingMaterialList(List<MaterialItem> materials){
     return materials.map((element) {
       var weaponsUsingMaterial = buildingCharacters.where((e) => e.weapon!.isUsingMaterial(element));
-      if(weaponsUsingMaterial.isEmpty) return FarmingMaterialData(material: element, quantity: 0, items: []);
-      else {
+      if(weaponsUsingMaterial.isEmpty) {
+        return FarmingMaterialData(material: element, quantity: 0, items: []);
+      } else {
         int total = 0;
         List<FarmingMaterialItemData> items = weaponsUsingMaterial.map((e){
           int quantity = e.weapon!.getStatMaterialQuantity(element, level: e.weapLevel);
@@ -191,11 +189,11 @@ class HomeProvider extends ChangeNotifier {
   }
 
   List<FarmingMaterialData> _constructCommonFarmingMaterialList(List<MaterialItem> materials){
-    
     var skillsMaterials = _constructSkillFarmingMaterialList(materials);
     var charStatsMaterials = _constructStatCharacterFarmingMaterialList(materials);
     var weapStatsMaterials = _constructStatWeaponFarmingMaterialList(materials);
-    var list = [...skillsMaterials];
+    List<FarmingMaterialData> list = [];
+    list = _appendCommonMaterials(list, skillsMaterials);
     list = _appendCommonMaterials(list, charStatsMaterials);
     list = _appendCommonMaterials(list, weapStatsMaterials);
 
