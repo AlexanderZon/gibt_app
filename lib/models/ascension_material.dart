@@ -2,8 +2,6 @@
 
 import 'dart:convert';
 
-import 'package:gibt_1/models/models.dart';
-
 class DescriptionAscensionMaterial {
     DescriptionAscensionMaterial({
         required this.id,

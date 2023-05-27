@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -9,7 +8,7 @@ class WeaponsProvider extends ChangeNotifier {
 
   List<Weapon> onDisplayWeapons = [];
 
-  final StreamController<List<Weapon>> _suggestionStreamController = new StreamController.broadcast();
+  final StreamController<List<Weapon>> _suggestionStreamController = StreamController.broadcast();
   Stream<List<Weapon>> get suggestionStream => _suggestionStreamController.stream;
 
   WeaponsProvider() {

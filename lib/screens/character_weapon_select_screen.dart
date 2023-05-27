@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:gibt_1/models/models.dart';
 import 'package:gibt_1/providers/account_characters_provider.dart';

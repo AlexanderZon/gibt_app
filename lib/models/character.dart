@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:gibt_1/models/models.dart';
 
@@ -100,13 +99,12 @@ class Character {
       };
 
   bool isUsingMaterial(MaterialItem material) {
-    return this.ascensionMaterials.any((asc_mat) => asc_mat.id == material.id);
+    return ascensionMaterials.any((ascMat) => ascMat.id == material.id);
   }
 
   bool isUsingSkillMaterial(MaterialItem material) {
-    return this
-        .skillAscensionMaterials
-        .any((asc_mat) => asc_mat.id == material.id);
+    return skillAscensionMaterials
+        .any((ascMat) => ascMat.id == material.id);
   }
 
   int getSkillsMaterialQuantity(
@@ -119,25 +117,26 @@ class Character {
     int toBurstTalentLevel = 9,
   }) {
     int quantity = 0;
-    for (int i = 0; i < this.skills.length; i++) {
-      var lvl = int.parse(this.skills[i].level);
+    for (int i = 0; i < skills.length; i++) {
+      var lvl = int.parse(skills[i].level);
       if (lvl > basicTalentLevel ||
           lvl > elementalTalentLevel ||
           lvl > burstTalentLevel) {
-        if (this
-            .skills[i]
+        if (skills[i]
             .materials
             .any((element) => element.id == material.id)) {
-          var skillMaterial = this
-              .skills[i]
+          var skillMaterial = skills[i]
               .materials
               .firstWhere((element) => element.id == material.id);
-          if (lvl > basicTalentLevel && lvl <= toBasicTalentLevel)
+          if (lvl > basicTalentLevel && lvl <= toBasicTalentLevel) {
             quantity += int.parse(skillMaterial.quantity);
-          if (lvl > elementalTalentLevel && lvl <= toElementalTalentLevel)
+          }
+          if (lvl > elementalTalentLevel && lvl <= toElementalTalentLevel) {
             quantity += int.parse(skillMaterial.quantity);
-          if (lvl > burstTalentLevel && lvl <= toBurstTalentLevel)
+          }
+          if (lvl > burstTalentLevel && lvl <= toBurstTalentLevel) {
             quantity += int.parse(skillMaterial.quantity);
+          }
         }
       }
     }
@@ -152,13 +151,12 @@ class Character {
     int quantity = 0;
     var lvl = accountCharacterLevels.map[level]!;
     var toLvl = accountCharacterLevels.map[toLevel]!;
-    for (int i = 0; i < this.stats.length; i++) {
-      var statLvl = accountCharacterLevels.map[this.stats[i].level]!;
+    for (int i = 0; i < stats.length; i++) {
+      var statLvl = accountCharacterLevels.map[stats[i].level]!;
       if (lvl < statLvl &&
           statLvl < toLvl &&
-          this.stats[i].materials.any((element) => element.id == material.id)) {
-        var statMaterial = this
-            .stats[i]
+          stats[i].materials.any((element) => element.id == material.id)) {
+        var statMaterial = stats[i]
             .materials
             .firstWhere((element) => element.id == material.id);
         quantity += int.parse(statMaterial.quantity);
@@ -168,6 +166,7 @@ class Character {
   }
 }
 
+// ignore: constant_identifier_names
 enum _Association { INAZUMA, MONDSTADT, LIYUE, FATUI, RANGER, SUMERU }
 
 final associationValues = EnumValues({
@@ -179,10 +178,12 @@ final associationValues = EnumValues({
   "Sumeru": _Association.SUMERU
 });
 
+// ignore: constant_identifier_names
 enum Element { UNKNOWN }
 
 final elementValues = EnumValues({"unknown": Element.UNKNOWN});
 
+// ignore: constant_identifier_names
 enum Vision { CRYO, ANEMO, ELECTRO, HYDRO, PYRO, GEO, DENDRO }
 
 final visionValues = EnumValues({

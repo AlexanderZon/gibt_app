@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -9,7 +8,7 @@ class CharactersProvider extends ChangeNotifier {
 
   List<Character> onDisplayCharacters = [];
 
-  final StreamController<List<Character>> _suggestionStreamController = new StreamController.broadcast();
+  final StreamController<List<Character>> _suggestionStreamController = StreamController.broadcast();
   Stream<List<Character>> get suggestionStream => _suggestionStreamController.stream;
 
   CharactersProvider() {

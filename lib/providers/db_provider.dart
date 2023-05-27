@@ -1,10 +1,8 @@
-import 'dart:developer';
 import 'dart:io';
-
+// ignore: depend_on_referenced_packages
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:gibt_1/models/models.dart';
 
 class DBProvider {
 
@@ -27,7 +25,6 @@ class DBProvider {
     // Path donde almacenaremos la base de datos
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
     final path = join( documentsDirectory.path, 'gibt-db.db');
-    log(path);
 
     // Crear la Base de datos
     return await openDatabase(

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:gibt_1/models/models.dart';
 import 'package:gibt_1/widgets/widgets.dart';
@@ -60,6 +58,7 @@ class CharacterInfoScreen extends StatelessWidget {
 }
 class _ScreenBackground extends StatelessWidget {
   const _ScreenBackground({
+    // ignore: unused_element
     super.key,
     required this.character,
   });

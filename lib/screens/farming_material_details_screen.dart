@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:gibt_1/models/models.dart';
 import 'package:gibt_1/widgets/element_header_splash_displayer.dart';
@@ -15,7 +13,6 @@ class FarmingMaterialDetailsScreen extends StatelessWidget {
   
     var titleStyle = const TextStyle(color: Colors.white, fontFamily: 'Genshin', fontSize: 36);
     var textStyle = const TextStyle(color: Colors.white, fontFamily: 'Genshin', fontSize: 16);
-    const Widget spacer = SizedBox(height: 20,);
 
     return Scaffold(
       body: Stack(
@@ -35,7 +32,7 @@ class FarmingMaterialDetailsScreen extends StatelessWidget {
                       Text('Needed for: ', style: textStyle,),
                       _FarmingMaterialDetailsGridViewer(material: material),
                       Text('Description: ', style: textStyle,),
-                      Text('${material.material.description}', style: textStyle,),
+                      Text(material.material.description, style: textStyle,),
                     ],
                   )
                 )
@@ -163,6 +160,7 @@ class _FarmingMaterialDetailsGridViewer extends StatelessWidget {
 
 class _ScreenBackground extends StatelessWidget {
   const _ScreenBackground({
+    // ignore: unused_element
     super.key,
     required this.material,
   });
@@ -171,8 +169,6 @@ class _ScreenBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log('screen background ');
-    log('rarity ${material.rarity}');
     return ElementInfoBackground(asset: 'assets/backgrounds/${material.rarity}-stars.png');
   }
 }

@@ -1,9 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:gibt_1/providers/home_provider.dart';
 import 'package:gibt_1/widgets/widgets.dart';
-import 'package:gibt_1/models/models.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {

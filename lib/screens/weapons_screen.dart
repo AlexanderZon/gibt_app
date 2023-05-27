@@ -57,7 +57,7 @@ class WeaponsScreen extends StatelessWidget {
         } else {
           return 0;
         }
-      };
+      }
     });
 
     const double cardAspectRatio = 0.9;
@@ -72,9 +72,7 @@ class WeaponsScreen extends StatelessWidget {
         crossAxisCount: columns,
         childAspectRatio: cardAspectRatio,
         children: list.map((e) => GestureDetector (
-          onTap: () {
-            Navigator.pushNamed(context, 'character_form', arguments: e.character);
-          },
+          onTap: () => Navigator.pushNamed(context, 'character_form', arguments: e.character),
           child: WeaponCard(
             data: e,
             maxWidth: cardMaxSize,

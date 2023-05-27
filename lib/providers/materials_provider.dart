@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -9,7 +8,7 @@ class MaterialsProvider extends ChangeNotifier {
 
   List<MaterialItem> onDisplayMaterials = [];
 
-  final StreamController<List<MaterialItem>> _suggestionStreamController = new StreamController.broadcast();
+  final StreamController<List<MaterialItem>> _suggestionStreamController = StreamController.broadcast();
   Stream<List<MaterialItem>> get suggestionStream => _suggestionStreamController.stream;
 
   MaterialsProvider() {
