@@ -39,7 +39,7 @@ class _CustomSwitchState extends State<CustomSwitch> {
       activeColor: Colors.indigo,
       title: Text(
         widget.label,
-        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        style: const TextStyle(fontSize: 16, fontFamily: "Genshin"),
       ),
       
       onChanged: (bool value) {

@@ -144,7 +144,12 @@ class _CharacterFormScreenContent extends StatelessWidget {
               SliderOptionsPicker(label: 'Weapon Level', options: characterLevels, formProperty: 'weapLevel', formValues: modelFormValues, onChange: saveCharacterData),
               SliderOptionsPicker(label: 'Weapon Refinement Rank', options: ranks, formProperty: 'weapRank', formValues: modelFormValues, onChange: saveCharacterData),
             ]),
-            CustomSwitch(label: 'Is Building?: ', formProperty: 'isBuilding', formValues: modelFormValues, onChange: saveCharacterData),
+            CustomSwitch(
+              label: 'Is Building?: ', 
+              formProperty: 'isBuilding', 
+              formValues: modelFormValues, 
+              onChange: saveCharacterData
+            ),
             const SizedBox(height: 10,),
           ],
         ),
