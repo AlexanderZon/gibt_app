@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:gibt_1/models/models.dart';
 import 'package:gibt_1/providers/account_characters_provider.dart';
@@ -18,7 +20,7 @@ class CharactersScreen extends StatelessWidget {
 
     final charactersProvider = Provider.of<CharactersProvider>(context, listen: true); 
     final accountCharactersProvider = Provider.of<AccountCharactersProvider>(context, listen: true); 
-
+    log("loading characters in screen");
     final accountCharacters = accountCharactersProvider.list;
     
     final List<AccountCharacterData> list = [

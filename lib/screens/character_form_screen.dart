@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:gibt_1/models/models.dart';
 import 'package:gibt_1/providers/account_characters_provider.dart';
@@ -44,6 +46,7 @@ class _CharacterFormScreenState extends State<CharacterFormScreen> {
     AccountCharacter actualModel = modelList.first;
 
     final List<String> characterLevels = ['1','20','20+','40', '40+', '50', '50+', '60', '60+', '70', '70+', '80', '80+', '90'];
+    final List<String> weaponLevels = ['1','20','20+','40', '40+', '50', '50+', '60', '60+', '70', '70+', '80', '80+', '90'];
     final List<int> constellations = [0,1,2,3,4,5,6];
     final List<int> ranks = [1,2,3,4,5];
     final List<int> talentLevels = [1,2,3,4,5,6,7,8,9,10];
@@ -75,6 +78,7 @@ class _CharacterFormScreenState extends State<CharacterFormScreen> {
       body: _CharacterFormScreenContent(
         actualModel: actualModel, 
         characterLevels: characterLevels, 
+        weaponLevels: weaponLevels, 
         modelFormValues: modelFormValues, 
         modelFormSettings: modelFormSettings, 
         constellations: constellations, 
@@ -96,6 +100,7 @@ class _CharacterFormScreenContent extends StatelessWidget {
     super.key,
     required this.actualModel,
     required this.characterLevels,
+    required this.weaponLevels,
     required this.modelFormValues,
     required this.modelFormSettings,
     required this.constellations,
@@ -107,6 +112,7 @@ class _CharacterFormScreenContent extends StatelessWidget {
 
   final AccountCharacter actualModel;
   final List<String> characterLevels;
+  final List<String> weaponLevels;
   final Map<String, dynamic> modelFormValues;
   final Map<String, dynamic> modelFormSettings;
   final List<int> constellations;
@@ -129,20 +135,21 @@ class _CharacterFormScreenContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("Weapon Level ${modelFormValues['weapLevel']}");
     return SingleChildScrollView(
       child: Form(
         child: Column(
           children: [
             _CharacterFormImageDisplayer(accountCharacter: actualModel, modelFormSettings: modelFormSettings, onTab: onTab),
             if(modelFormSettings['tab'] == 0) Column(children: [
-              SliderOptionsPicker(label: 'Charcter Level', options: characterLevels, formProperty: 'level', formValues: modelFormValues, onChange: saveCharacterData),
-              SliderOptionsPicker(label: 'Constellations', options: constellations, formProperty: 'constellations', formValues: modelFormValues, onChange: saveCharacterData),
-              SliderOptionsPicker(label: 'Basic Talent Level', options: talentLevels, formProperty: 'basicTalentLevel', formValues: modelFormValues, onChange: saveCharacterData),
-              SliderOptionsPicker(label: 'Elemental Talent Level', options: talentLevels, formProperty: 'elementalTalentLevel', formValues: modelFormValues, onChange: saveCharacterData),
-              SliderOptionsPicker(label: 'Burst Talent Level', options: talentLevels, formProperty: 'burstTalentLevel', formValues: modelFormValues, onChange: saveCharacterData),
+              SliderOptionsPicker(key: Key("level"), label: 'Charcter Level', options: characterLevels, formProperty: 'level', formValues: modelFormValues, onChange: saveCharacterData),
+              SliderOptionsPicker(key: Key("constellations"), label: 'Constellations', options: constellations, formProperty: 'constellations', formValues: modelFormValues, onChange: saveCharacterData),
+              SliderOptionsPicker(key: Key("basicTalentLevel"), label: 'Basic Talent Level', options: talentLevels, formProperty: 'basicTalentLevel', formValues: modelFormValues, onChange: saveCharacterData),
+              SliderOptionsPicker(key: Key("elementalTalentLevel"), label: 'Elemental Talent Level', options: talentLevels, formProperty: 'elementalTalentLevel', formValues: modelFormValues, onChange: saveCharacterData),
+              SliderOptionsPicker(key: Key("burstTalentLevel"), label: 'Burst Talent Level', options: talentLevels, formProperty: 'burstTalentLevel', formValues: modelFormValues, onChange: saveCharacterData),
             ]) else if(modelFormSettings['tab'] == 1) Column(children: [
-              SliderOptionsPicker(label: 'Weapon Level', options: characterLevels, formProperty: 'weapLevel', formValues: modelFormValues, onChange: saveCharacterData),
-              SliderOptionsPicker(label: 'Weapon Refinement Rank', options: ranks, formProperty: 'weapRank', formValues: modelFormValues, onChange: saveCharacterData),
+              SliderOptionsPicker(key: Key("weapLevel"), label: 'Weapon Level', options: weaponLevels, formProperty: 'weapLevel', formValues: modelFormValues, onChange: saveCharacterData),
+              SliderOptionsPicker(key: Key("weapRank"), label: 'Weapon Refinement Rank', options: ranks, formProperty: 'weapRank', formValues: modelFormValues, onChange: saveCharacterData),
             ]),
             CustomSwitch(
               label: 'Is Building?: ', 

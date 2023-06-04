@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:gibt_1/models/models.dart';
@@ -15,6 +16,7 @@ class AccountCharactersProvider extends ChangeNotifier {
   }
 
   all() async {
+    log("Reloading all characters");
     // await AccountCharacter.truncate();
     var account = await Account.getActive();  
     list = await account.accountCharacters;

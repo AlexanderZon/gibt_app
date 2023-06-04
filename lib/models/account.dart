@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:gibt_1/models/account_character.dart';
 import 'package:gibt_1/providers/db_provider.dart';
@@ -72,7 +73,7 @@ class Account {
     final db = await DBProvider.db.database;
     final res = await db.query('accounts');
     final response = res.isNotEmpty
-        ? res.map((e) => Account.fromJson(res.first)).toList()
+        ? res.map((e) => Account.fromJson(e)).toList()
         : [] as List<Account>;
 
     return response;

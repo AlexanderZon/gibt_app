@@ -96,7 +96,6 @@ class AccountCharacter {
   static Future<int> store(AccountCharacter accountCharacter) async {
     final db = await DBProvider.db.database;
     final res = await db.insert('account_characters', accountCharacter.toJson());
-    log('saving account character ${accountCharacter.characterId} in account ${accountCharacter.accountId}');
     return res;
   }
 
@@ -138,7 +137,6 @@ class AccountCharacter {
   }
 
   static Future<List<AccountCharacter>> whereAccountId(int id) async {
-    log('looking character where account_id: ${id}');
     final db = await DBProvider.db.database;
     final res = await db.query('account_characters', where: 'account_id = ?', whereArgs: [id]);
     final response = res.isNotEmpty
