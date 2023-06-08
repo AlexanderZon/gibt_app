@@ -25,15 +25,19 @@ class ElementHeaderSplashDisplayer extends StatelessWidget {
           height: 250,
           child: Column(
             children: [
-              const SizedBox(height: 50,),
+              const SizedBox(
+                height: 50,
+              ),
               Row(
                 children: [
                   IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(Icons.arrow_back, color: Colors.white,)
-                  ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back,
+                        color: Colors.white,
+                      )),
                   Expanded(child: Container())
                 ],
               ),
@@ -41,7 +45,6 @@ class ElementHeaderSplashDisplayer extends StatelessWidget {
             ],
           ),
         ),
-
       ],
     );
   }

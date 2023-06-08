@@ -5,7 +5,6 @@ import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
 class DBProvider {
-
   static Database? _database;
   static final DBProvider db = DBProvider._();
 
@@ -13,7 +12,7 @@ class DBProvider {
   DBProvider._();
 
   Future<Database> get database async {
-    if(_database != null) return _database!;
+    if (_database != null) return _database!;
 
     _database = await initDB();
 
@@ -21,10 +20,9 @@ class DBProvider {
   }
 
   Future<Database> initDB() async {
-
     // Path donde almacenaremos la base de datos
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
-    final path = join( documentsDirectory.path, 'gibt-db.db');
+    final path = join(documentsDirectory.path, 'gibt-db.db');
 
     // Crear la Base de datos
     return await openDatabase(
@@ -60,7 +58,5 @@ class DBProvider {
         ''');
       },
     );
-
   }
-
 }

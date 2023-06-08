@@ -3,7 +3,6 @@ import 'package:gibt_1/screens/screens.dart';
 import 'package:gibt_1/widgets/widgets.dart';
 
 class MainScreen extends StatefulWidget {
-   
   const MainScreen({Key? key}) : super(key: key);
 
   @override
@@ -11,7 +10,6 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-
   int currentState = 0;
 
   List<Widget> screens = [
@@ -20,14 +18,11 @@ class _MainScreenState extends State<MainScreen> {
     const WeaponsScreen(),
     const SettingsScreen(),
   ];
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        index: currentState,
-        children: screens
-      ),
+      body: IndexedStack(index: currentState, children: screens),
       bottomNavigationBar: AppBottomNavigationBar(
         currentState: currentState,
         onTab: (index) {

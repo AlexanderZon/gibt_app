@@ -5,18 +5,19 @@ import 'package:flutter/services.dart';
 import 'package:gibt_1/models/models.dart';
 
 class MaterialsProvider extends ChangeNotifier {
-
   List<MaterialItem> onDisplayMaterials = [];
 
-  final StreamController<List<MaterialItem>> _suggestionStreamController = StreamController.broadcast();
-  Stream<List<MaterialItem>> get suggestionStream => _suggestionStreamController.stream;
+  final StreamController<List<MaterialItem>> _suggestionStreamController =
+      StreamController.broadcast();
+  Stream<List<MaterialItem>> get suggestionStream =>
+      _suggestionStreamController.stream;
 
   MaterialsProvider() {
     getOnDisplayMaterials();
   }
   Future<String> readJson() async {
-    final String response = 
-          await rootBundle.loadString('assets/data/materials.json');
+    final String response =
+        await rootBundle.loadString('assets/data/materials.json');
     return response;
   }
 
@@ -24,7 +25,7 @@ class MaterialsProvider extends ChangeNotifier {
     var jsonData = await readJson();
 
     final charactersList = MaterialsList.fromRawJson(jsonData);
-    
+
     onDisplayMaterials = charactersList.list;
     notifyListeners();
   }

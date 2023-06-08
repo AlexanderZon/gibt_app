@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:gibt_1/models/models.dart';
@@ -8,7 +7,7 @@ class AccountCharactersProvider extends ChangeNotifier {
 
   List<AccountCharacter> list = [];
 
-  final StreamController<List<AccountCharacter>> _suggestionStreamController = new StreamController.broadcast();
+  final StreamController<List<AccountCharacter>> _suggestionStreamController = StreamController.broadcast();
   Stream<List<AccountCharacter>> get suggestionStream => _suggestionStreamController.stream;
 
   AccountCharactersProvider() {
@@ -16,8 +15,6 @@ class AccountCharactersProvider extends ChangeNotifier {
   }
 
   all() async {
-    log("Reloading all characters");
-    // await AccountCharacter.truncate();
     var account = await Account.getActive();  
     list = await account.accountCharacters;
     notifyListeners();

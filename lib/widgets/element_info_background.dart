@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class ElementInfoBackground extends StatelessWidget {
@@ -16,12 +14,11 @@ class ElementInfoBackground extends StatelessWidget {
       height: double.infinity,
       width: double.infinity,
       decoration: BoxDecoration(
-        image: DecorationImage(
-          fit: BoxFit.cover,
-          colorFilter: ColorFilter.mode(Colors.white.withOpacity(1), BlendMode.dstATop),
-          image: AssetImage(asset)
-        )
-      ),
+          image: DecorationImage(
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                  Colors.white.withOpacity(1), BlendMode.dstATop),
+              image: AssetImage(asset))),
     );
   }
 }

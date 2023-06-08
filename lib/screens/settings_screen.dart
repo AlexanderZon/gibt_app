@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:gibt_1/models/account.dart';
 import 'package:gibt_1/providers/account_characters_provider.dart';
@@ -11,8 +9,8 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    final accountsProvider = Provider.of<AccountsProvider>(context, listen: true); 
+    final accountsProvider =
+        Provider.of<AccountsProvider>(context, listen: true);
     final accounts = accountsProvider.list;
 
     return Scaffold(
@@ -27,14 +25,14 @@ class SettingsScreen extends StatelessWidget {
             children: [
               const Text("Accounts List"),
               ListView.builder(
-                itemCount: accounts.length,
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                itemBuilder: (context, index) {
-                  log("account id: ${accounts[index].id}");
-                  return _ContextMenuDemo(account: accounts[index],);
-                }
-              )
+                  itemCount: accounts.length,
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return _ContextMenuDemo(
+                      account: accounts[index],
+                    );
+                  })
             ],
           ),
         ),
@@ -42,21 +40,21 @@ class SettingsScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.indigo,
         onPressed: () {
-          // TODO: Visualizar formualario de Creación de cuenta
-          Account account = new Account(name: "", server: "NA", isActive: false);
+          Account account = Account(name: "", server: "NA", isActive: false);
           openCreateDialog(context, account);
         },
         child: const Icon(Icons.add),
       ),
     );
   }
-  
-  Future openCreateDialog(BuildContext context, Account account){
+
+  Future openCreateDialog(BuildContext context, Account account) {
     return showDialog(
-      useSafeArea: true,
-      context: context, 
-      builder: (context) => AccountFormDialog(account: account,)
-    );
+        useSafeArea: true,
+        context: context,
+        builder: (context) => AccountFormDialog(
+              account: account,
+            ));
   }
 }
 
@@ -64,20 +62,24 @@ class SettingsScreen extends StatelessWidget {
 // a simple menu with one disabled item. Typically the contents
 // of this "contextual menu" would reflect the app's state.
 class _ContextMenuDemo extends StatelessWidget {
-  const _ContextMenuDemo({
-    Key? key, 
-    required this.account}) : super(key: key);
+  const _ContextMenuDemo({Key? key, required this.account}) : super(key: key);
 
   final Account account;
 
   @override
   Widget build(BuildContext context) {
-
-    final accountsProvider = Provider.of<AccountsProvider>(context, listen: false); 
-    final accountCharactersProvider = Provider.of<AccountCharactersProvider>(context, listen: false);
+    final accountsProvider =
+        Provider.of<AccountsProvider>(context, listen: false);
+    final accountCharactersProvider =
+        Provider.of<AccountCharactersProvider>(context, listen: false);
 
     return ListTile(
-      leading: account.isActive ? Icon(Icons.check, color: Colors.green,) : Icon(Icons.check),
+      leading: account.isActive
+          ? const Icon(
+              Icons.check,
+              color: Colors.green,
+            )
+          : const Icon(Icons.check),
       title: Text(account.name),
       subtitle: Text("Server: ${account.server}"),
       onTap: () async {
@@ -87,9 +89,9 @@ class _ContextMenuDemo extends StatelessWidget {
       trailing: PopupMenuButton<String>(
         padding: EdgeInsets.zero,
         onSelected: (value) {
-          if(value == 'edit'){
+          if (value == 'edit') {
             openEditDialog(context, account);
-          } else if(value == 'delete'){
+          } else if (value == 'delete') {
             openConfirmDeleteDialog(context, account);
           }
         },
@@ -114,27 +116,26 @@ class _ContextMenuDemo extends StatelessWidget {
     );
   }
 
-  Future openConfirmDeleteDialog(BuildContext context, Account account){
-
+  Future openConfirmDeleteDialog(BuildContext context, Account account) {
     return showDialog(
-      context: context, 
-      builder: (context) => ConfirmDeleteAccountDialog(account: account,)
-    );
+        context: context,
+        builder: (context) => ConfirmDeleteAccountDialog(
+              account: account,
+            ));
   }
-  Future openEditDialog(BuildContext context, Account account){
+
+  Future openEditDialog(BuildContext context, Account account) {
     return showDialog(
-      useSafeArea: true,
-      context: context, 
-      builder: (context) => AccountFormDialog(account: account,)
-    );
+        useSafeArea: true,
+        context: context,
+        builder: (context) => AccountFormDialog(
+              account: account,
+            ));
   }
 }
 
 class AccountFormDialog extends StatefulWidget {
-  const AccountFormDialog({
-    super.key,
-    required this.account
-  });
+  const AccountFormDialog({super.key, required this.account});
   final Account account;
 
   @override
@@ -142,26 +143,22 @@ class AccountFormDialog extends StatefulWidget {
 }
 
 class _AccountFormDialogState extends State<AccountFormDialog> {
-
   late TextEditingController accountNameTextController;
   late String accountServer;
 
-  List<String> serversList = [
-    "NA",
-    "EU",
-    "AS",
-    "TW"
-  ];
+  List<String> serversList = ["NA", "EU", "AS", "TW"];
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     accountNameTextController = TextEditingController();
-    if(widget.account.name != Null){
+    // ignore: unrelated_type_equality_checks
+    if (widget.account.name != Null) {
       accountNameTextController.text = widget.account.name;
     }
     accountServer = "NA";
-    if(widget.account.server != Null){
+    // ignore: unrelated_type_equality_checks
+    if (widget.account.server != Null) {
       accountServer = widget.account.server;
     }
   }
@@ -174,8 +171,8 @@ class _AccountFormDialogState extends State<AccountFormDialog> {
 
   @override
   Widget build(BuildContext context) {
-
-    final accountsProvider = Provider.of<AccountsProvider>(context, listen: false); 
+    final accountsProvider =
+        Provider.of<AccountsProvider>(context, listen: false);
 
     return AlertDialog(
       title: const Text("Account Form"),
@@ -189,21 +186,23 @@ class _AccountFormDialogState extends State<AccountFormDialog> {
             ),
             Container(
               decoration: BoxDecoration(
-                border: BorderDirectional(bottom: BorderSide(color: Colors.black.withAlpha(150), width: 1))
-              ),
+                  border: BorderDirectional(
+                      bottom: BorderSide(
+                          color: Colors.black.withAlpha(150), width: 1))),
               child: DropdownButton(
-                autofocus: true,
-                hint: const Text("Select Server"),
-                isExpanded: true,
-                underline: const SizedBox(),
-                value: accountServer,
-                items: serversList.map((e) => DropdownMenuItem(value: e, child: Text(e))).toList(),
-                onChanged: (newValue){
-                  setState(() {
-                    accountServer = newValue!;
-                  });
-                }
-              ),
+                  autofocus: true,
+                  hint: const Text("Select Server"),
+                  isExpanded: true,
+                  underline: const SizedBox(),
+                  value: accountServer,
+                  items: serversList
+                      .map((e) => DropdownMenuItem(value: e, child: Text(e)))
+                      .toList(),
+                  onChanged: (newValue) {
+                    setState(() {
+                      accountServer = newValue!;
+                    });
+                  }),
             )
             // TextField(
             //   decoration: InputDecoration(hintText: 'Select Server'),
@@ -212,62 +211,54 @@ class _AccountFormDialogState extends State<AccountFormDialog> {
         ),
       ),
       actions: [
-        
         TextButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          }, 
-          child: const Text("Close")
-        ),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text("Close")),
         TextButton(
-          onPressed: () {
-            if(accountNameTextController.text.isEmpty) return;
-            Navigator.of(context).pop();
-            widget.account.name = accountNameTextController.text;
-            widget.account.server = accountServer;
-            if(widget.account.id == null){
-              accountsProvider.store(widget.account);
-            } else {
-              accountsProvider.update(widget.account);
-            }
-          }, 
-          child: const Text("Save")
-        )
+            onPressed: () {
+              if (accountNameTextController.text.isEmpty) return;
+              Navigator.of(context).pop();
+              widget.account.name = accountNameTextController.text;
+              widget.account.server = accountServer;
+              if (widget.account.id == null) {
+                accountsProvider.store(widget.account);
+              } else {
+                accountsProvider.update(widget.account);
+              }
+            },
+            child: const Text("Save"))
       ],
     );
   }
 }
 
 class ConfirmDeleteAccountDialog extends StatelessWidget {
-  const ConfirmDeleteAccountDialog({
-    super.key,
-    required this.account
-  });
+  const ConfirmDeleteAccountDialog({super.key, required this.account});
   final Account account;
 
   @override
   Widget build(BuildContext context) {
-
-    final accountsProvider = Provider.of<AccountsProvider>(context, listen: false);
+    final accountsProvider =
+        Provider.of<AccountsProvider>(context, listen: false);
 
     return AlertDialog(
       title: const Text("Delete ccount?"),
-      content: Text('Are you sure to delete the account "${account.name}" in server "${account.server}"?.'),
+      content: Text(
+          'Are you sure to delete the account "${account.name}" in server "${account.server}"?.'),
       actions: [
         TextButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          }, 
-          child: const Text("No")
-        ),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text("No")),
         TextButton(
-          onPressed: () {
-            // TODO Delete account
-            accountsProvider.delete(account);
-            Navigator.of(context).pop();
-          }, 
-          child: const Text("Yes")
-        )
+            onPressed: () {
+              accountsProvider.delete(account);
+              Navigator.of(context).pop();
+            },
+            child: const Text("Yes"))
       ],
     );
   }

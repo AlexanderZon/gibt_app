@@ -15,13 +15,13 @@ export 'package:gibt_1/models/weapon.dart';
 export 'package:gibt_1/models/weapons_list.dart';
 
 class EnumValues<T> {
-    Map<String, T> map;
-    late Map<T, String> reverseMap;
+  Map<String, T> map;
+  late Map<T, String> reverseMap;
 
-    EnumValues(this.map);
+  EnumValues(this.map);
 
-    Map<T, String> get reverse {
-        reverseMap = map.map((k, v) => MapEntry(v, k));
-        return reverseMap;
-    }
+  Map<T, String> get reverse {
+    reverseMap = map.map((k, v) => MapEntry(v, k));
+    return reverseMap;
+  }
 }

@@ -39,8 +39,8 @@ class CharacterStat {
         critDmg: json["crit_dmg"],
         variableStat: variableStatValues.map[json["variable_stat"]]!,
         variableStatValue: json["variable_stat_value"],
-        materials: List<StatAscensionMaterial>.from(json["materials"]
-            .map((x) => StatAscensionMaterial.fromJson(x))),
+        materials: List<StatAscensionMaterial>.from(
+            json["materials"].map((x) => StatAscensionMaterial.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {

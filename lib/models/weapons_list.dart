@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final weaponList = weaponListFromJson(jsonString);
-
 import 'dart:convert';
 
 import 'package:gibt_1/models/models.dart';

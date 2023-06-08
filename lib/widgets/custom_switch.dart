@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class CustomSwitch extends StatefulWidget {
   const CustomSwitch({
     super.key,
-    required this.formValues, 
+    required this.formValues,
     required this.formProperty,
-    required this.label, 
+    required this.label,
     required this.onChange,
   });
 
@@ -19,7 +19,6 @@ class CustomSwitch extends StatefulWidget {
 }
 
 class _CustomSwitchState extends State<CustomSwitch> {
-
   final MaterialStateProperty<Icon?> thumbIcon =
       MaterialStateProperty.resolveWith<Icon?>(
     (Set<MaterialState> states) {
@@ -41,11 +40,12 @@ class _CustomSwitchState extends State<CustomSwitch> {
         widget.label,
         style: const TextStyle(fontSize: 16, fontFamily: "Genshin"),
       ),
-      
+
       onChanged: (bool value) {
         // This is called when the user toggles the switch.
         setState(() {
-          widget.formValues[widget.formProperty] = !widget.formValues[widget.formProperty];
+          widget.formValues[widget.formProperty] =
+              !widget.formValues[widget.formProperty];
           widget.onChange();
         });
       },

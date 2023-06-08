@@ -1,5 +1,3 @@
-
-
 import 'package:gibt_1/models/models.dart';
 
 enum VariableStat {

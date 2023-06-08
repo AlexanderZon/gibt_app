@@ -6,11 +6,12 @@ import 'package:gibt_1/models/models.dart';
 
 class AccountsProvider extends ChangeNotifier {
 
+  // ignore: avoid_init_to_null
   dynamic activeAccount = null;
 
   List<Account> list = [];
 
-  final StreamController<List<Account>> _suggestionStreamController = new StreamController.broadcast();
+  final StreamController<List<Account>> _suggestionStreamController = StreamController.broadcast();
   Stream<List<Account>> get suggestionStream => _suggestionStreamController.stream;
 
   AccountsProvider() {

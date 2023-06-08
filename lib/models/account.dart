@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:gibt_1/models/account_character.dart';
 import 'package:gibt_1/providers/db_provider.dart';

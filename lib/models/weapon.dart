@@ -49,8 +49,8 @@ class Weapon {
         "stats": List<dynamic>.from(stats.map((x) => x.toJson())),
       };
 
-  static String defaultWeaponId (WeaponType weaponType) {
-    switch(weaponType){
+  static String defaultWeaponId(WeaponType weaponType) {
+    switch (weaponType) {
       case WeaponType.BOW:
         return 'i_n15101';
       case WeaponType.CATALYST:
@@ -65,20 +65,25 @@ class Weapon {
   }
 
   bool isUsingMaterial(MaterialItem material) {
-    return this.ascensionMaterials.any((asc_mat) => asc_mat.id == material.id);
+    return ascensionMaterials.any((ascMat) => ascMat.id == material.id);
   }
 
-  int getStatMaterialQuantity (MaterialItem material, {
-    String level = '1', 
-    String toLevel = '90', 
+  int getStatMaterialQuantity(
+    MaterialItem material, {
+    String level = '1',
+    String toLevel = '90',
   }) {
     int quantity = 0;
     var lvl = accountCharacterLevels.map[level]!;
     var toLvl = accountCharacterLevels.map[toLevel]!;
-    for(int i = 0; i < this.stats.length; i++){
-      var statLvl = accountCharacterLevels.map[this.stats[i].level]!;
-      if(lvl < statLvl && statLvl < toLvl && this.stats[i].materials.any((element) => element.id == material.id)){
-        var statMaterial = this.stats[i].materials.firstWhere((element) => element.id == material.id);
+    for (int i = 0; i < stats.length; i++) {
+      var statLvl = accountCharacterLevels.map[stats[i].level]!;
+      if (lvl < statLvl &&
+          statLvl < toLvl &&
+          stats[i].materials.any((element) => element.id == material.id)) {
+        var statMaterial = stats[i]
+            .materials
+            .firstWhere((element) => element.id == material.id);
         quantity += statMaterial.quantity;
       }
     }

@@ -1,9 +1,4 @@
-// To parse this JSON data, do
-//
-//     final account = accountFromJson(jsonString);
-
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:gibt_1/models/models.dart';
 import 'package:gibt_1/providers/db_provider.dart';
@@ -100,7 +95,7 @@ class AccountCharacter {
   }
 
   Future<int> save() async {
-    if(this.id == null){
+    if(id == null){
       return AccountCharacter.store(this);
     } else {
       return AccountCharacter.update(this);
@@ -146,11 +141,9 @@ class AccountCharacter {
   }
 
   static Future<List<AccountCharacter>> whereCharacterId(String id) async {
-    log('looking character where character_id: ${id}');
     return AccountCharacter.where('character_id', id);
   }
 }
-
 
 enum AccountCharacterLevel { l1, l20, l20p, l40, l40p, l50, l50p, l60, l60p, l70, l70p, l80, l80p, l90 }
 

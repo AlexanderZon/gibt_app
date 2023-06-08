@@ -4,66 +4,69 @@ import 'package:gibt_1/widgets/widgets.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class WeaponCard extends StatelessWidget {
-
   final AccountWeaponData data;
   final double maxWidth;
   final double aspectRatio;
 
-  const WeaponCard({super.key, required this.data, required this.maxWidth, required this.aspectRatio});
+  const WeaponCard(
+      {super.key,
+      required this.data,
+      required this.maxWidth,
+      required this.aspectRatio});
 
   @override
   Widget build(BuildContext context) {
-
-    final sideIconsSize = ((maxWidth/aspectRatio)-30)/3;
+    final sideIconsSize = ((maxWidth / aspectRatio) - 30) / 3;
 
     BoxFit boxFit = BoxFit.cover;
-    if(data.weapon.weaponType == WeaponType.CATALYST) boxFit = BoxFit.contain;
-    if(data.isPulled && data.isBuilding){
+    if (data.weapon.weaponType == WeaponType.CATALYST) boxFit = BoxFit.contain;
+    if (data.isPulled && data.isBuilding) {
       return GenericResourceCard(
         data: GenericResourceCardData(
-          mainImage: 'assets/weapons/${data.weapon.id}_icon.webp', 
-          text: data.weapon.name, 
-          sideIcons: [
-            GenericResourceCardSideIconData(image: 'assets/characters/${data.character.id}_icon.webp'),
-            GenericResourceCardSideIconData(text: data.level),
-            GenericResourceCardSideIconData(icon: MdiIcons.tools, color: Colors.green),
-          ], 
-          sideIconsSize: sideIconsSize,
-          stars: data.weapon.rarity
-        ),
-        maxWidth: maxWidth,
-        boxFit: boxFit,
-      );
-    } else if(data.isPulled) {
-      return GenericResourceCard(
-        data: GenericResourceCardData(
-          mainImage: 'assets/weapons/${data.weapon.id}_icon.webp', 
-          text: data.weapon.name, 
-          sideIcons: [
-            // ignore: unnecessary_null_comparison
-            if(data.character != null)
-              GenericResourceCardSideIconData(image: 'assets/characters/${data.character.id}_icon.webp'),
-            // ignore: unnecessary_null_comparison
-            if(data.level != null)
+            mainImage: 'assets/weapons/${data.weapon.id}_icon.webp',
+            text: data.weapon.name,
+            sideIcons: [
+              GenericResourceCardSideIconData(
+                  image: 'assets/characters/${data.character.id}_icon.webp'),
               GenericResourceCardSideIconData(text: data.level),
-          ], 
-          sideIconsSize: sideIconsSize,
-          stars: data.weapon.rarity
-        ),
+              GenericResourceCardSideIconData(
+                  icon: MdiIcons.tools, color: Colors.green),
+            ],
+            sideIconsSize: sideIconsSize,
+            stars: data.weapon.rarity),
         maxWidth: maxWidth,
         boxFit: boxFit,
       );
-    } else { 
+    } else if (data.isPulled) {
       return GenericResourceCard(
         data: GenericResourceCardData(
-          mainImage: 'assets/weapons/${data.weapon.id}_icon.webp', 
-          text: data.weapon.name, 
-          sideIcons: [
-            GenericResourceCardSideIconData(icon: MdiIcons.plusThick, color: Colors.blue),
-          ], 
-          sideIconsSize: sideIconsSize,
-          stars: data.weapon.rarity
-        ),
+            mainImage: 'assets/weapons/${data.weapon.id}_icon.webp',
+            text: data.weapon.name,
+            sideIcons: [
+              // ignore: unnecessary_null_comparison
+              if (data.character != null)
+                GenericResourceCardSideIconData(
+                    image: 'assets/characters/${data.character.id}_icon.webp'),
+              // ignore: unnecessary_null_comparison
+              if (data.level != null)
+                GenericResourceCardSideIconData(text: data.level),
+            ],
+            sideIconsSize: sideIconsSize,
+            stars: data.weapon.rarity),
+        maxWidth: maxWidth,
+        boxFit: boxFit,
+      );
+    } else {
+      return GenericResourceCard(
+        data: GenericResourceCardData(
+            mainImage: 'assets/weapons/${data.weapon.id}_icon.webp',
+            text: data.weapon.name,
+            sideIcons: [
+              GenericResourceCardSideIconData(
+                  icon: MdiIcons.plusThick, color: Colors.blue),
+            ],
+            sideIconsSize: sideIconsSize,
+            stars: data.weapon.rarity),
         maxWidth: maxWidth,
         faded: true,
         boxFit: boxFit,
@@ -73,7 +76,6 @@ class WeaponCard extends StatelessWidget {
 }
 
 class AccountWeaponData {
-  
   final Weapon weapon;
   final bool isBuilding;
   final bool isPulled;
@@ -84,15 +86,14 @@ class AccountWeaponData {
   final String? burstTalentLevel;
   final Character character;
 
-  AccountWeaponData({ 
-    required this.weapon, 
-    required this.isBuilding,
-    required this.isPulled,
-    required this.character, 
-    required this.level,
-    this.constellations, 
-    this.basicTalentLevel, 
-    this.elementalTalentLevel, 
-    this.burstTalentLevel
-  });
+  AccountWeaponData(
+      {required this.weapon,
+      required this.isBuilding,
+      required this.isPulled,
+      required this.character,
+      required this.level,
+      this.constellations,
+      this.basicTalentLevel,
+      this.elementalTalentLevel,
+      this.burstTalentLevel});
 }
