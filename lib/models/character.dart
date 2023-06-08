@@ -129,13 +129,13 @@ class Character {
               .materials
               .firstWhere((element) => element.id == material.id);
           if (lvl > basicTalentLevel && lvl <= toBasicTalentLevel) {
-            quantity += int.parse(skillMaterial.quantity);
+            quantity += skillMaterial.quantity;
           }
           if (lvl > elementalTalentLevel && lvl <= toElementalTalentLevel) {
-            quantity += int.parse(skillMaterial.quantity);
+            quantity += skillMaterial.quantity;
           }
           if (lvl > burstTalentLevel && lvl <= toBurstTalentLevel) {
-            quantity += int.parse(skillMaterial.quantity);
+            quantity += skillMaterial.quantity;
           }
         }
       }
@@ -159,7 +159,7 @@ class Character {
         var statMaterial = stats[i]
             .materials
             .firstWhere((element) => element.id == material.id);
-        quantity += int.parse(statMaterial.quantity);
+        quantity += statMaterial.quantity;
       }
     }
     return quantity;

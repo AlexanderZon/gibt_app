@@ -35,7 +35,7 @@ class StatAscensionMaterial {
 
   String id;
   String name;
-  String quantity;
+  int quantity;
 
   factory StatAscensionMaterial.fromRawJson(String str) =>
       StatAscensionMaterial.fromJson(json.decode(str));

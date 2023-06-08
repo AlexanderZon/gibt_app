@@ -79,7 +79,7 @@ class Weapon {
       var statLvl = accountCharacterLevels.map[this.stats[i].level]!;
       if(lvl < statLvl && statLvl < toLvl && this.stats[i].materials.any((element) => element.id == material.id)){
         var statMaterial = this.stats[i].materials.firstWhere((element) => element.id == material.id);
-        quantity += int.parse(statMaterial.quantity);
+        quantity += statMaterial.quantity;
       }
     }
     return quantity;

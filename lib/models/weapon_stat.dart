@@ -12,9 +12,9 @@ class WeaponStat {
   });
 
   String level;
-  String atk;
+  double atk;
   VariableStat? variableStat;
-  String? variableStatValue;
+  double? variableStatValue;
   List<StatAscensionMaterial> materials;
 
   factory WeaponStat.fromRawJson(String str) =>

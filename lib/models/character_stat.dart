@@ -16,13 +16,13 @@ class CharacterStat {
   });
 
   String level;
-  String hp;
-  String atk;
-  String def;
-  String critRate;
-  String critDmg;
+  double hp;
+  double atk;
+  double def;
+  double critRate;
+  double critDmg;
   VariableStat variableStat;
-  String variableStatValue;
+  double variableStatValue;
   List<StatAscensionMaterial> materials;
 
   factory CharacterStat.fromRawJson(String str) =>
