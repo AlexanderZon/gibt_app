@@ -1,4 +1,4 @@
-package com.example.gibt_1
+package com.blackmountain.apps.gibt
 
 import io.flutter.embedding.android.FlutterActivity
 
