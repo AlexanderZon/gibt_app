@@ -17,7 +17,7 @@ class FarmingMaterialsListSlider extends StatelessWidget {
           width: double.infinity,
           height: 150,
           alignment: Alignment.center,
-          child: const Text('There is no data'));
+          child: const Text('There is no data. Try to add some characters.'));
     }
 
     return Container(

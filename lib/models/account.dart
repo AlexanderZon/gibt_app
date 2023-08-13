@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:gibt_1/models/account_character.dart';
 import 'package:gibt_1/providers/db_provider.dart';
 
@@ -41,21 +40,12 @@ class Account {
 
     // Si no existe ninguna cuenta activa
     if(response == null){
-      final res = await db.query('accounts');
-      // Si no existe ninguna cuenta registrada
-      if(res.isEmpty){
-        // Crear primera cuenta
-        final firstAccount = Account(name: '(Account without name)', server: 'NA', isActive: true);
-        firstAccount.id = await firstAccount.save();
-        return firstAccount;
-      } else {
-        // Setea la primera cuenta como la nueva cuenta activa
-        final accountList = await Account.all();
-        final newActiveAccount = accountList.first;
-        newActiveAccount.isActive = true;
-        await Account.update(newActiveAccount);
-        return newActiveAccount;
-      }
+      // Setea la primera cuenta como la nueva cuenta activa
+      final accountList = await Account.all();
+      final newActiveAccount = accountList.first;
+      newActiveAccount.isActive = true;
+      await Account.update(newActiveAccount);
+      return newActiveAccount;
     }
     return response;
   }
@@ -71,11 +61,13 @@ class Account {
   static Future<List<Account>> all() async {
     final db = await DBProvider.db.database;
     final res = await db.query('accounts');
-    final response = res.isNotEmpty
-        ? res.map((e) => Account.fromJson(e)).toList()
-        : [] as List<Account>;
-
-    return response;
+    if(res.isNotEmpty){
+      return res.map((e) => Account.fromJson(e)).toList();
+    } else {
+      final account = Account(name: '(Account without name)', server: 'NA', isActive: true);
+      store(account);
+      return all();
+    }
   }
 
   static Future<int> store(Account account) async {
