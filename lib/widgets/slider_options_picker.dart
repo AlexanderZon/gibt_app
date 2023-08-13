@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 
 class SliderOptionsPicker extends StatefulWidget {
@@ -103,15 +101,13 @@ class _SliderOptionsPickerState extends State<SliderOptionsPicker> {
                           widget.formValues[widget.formProperty] =
                               widget.options[nextOption];
                           widget.onChange();
-
-                          log("${widget.formProperty}: ${widget.formValues[widget.formProperty]}");
                         });
                         // Set selected option visible
                         try {
                           scrollController.position
                               .setPixels(nextOption * optionWidth);
                         } catch (_AssertionError) {
-                          log("Error");
+                          //
                         }
                       }
                       return false;

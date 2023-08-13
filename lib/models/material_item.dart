@@ -7,7 +7,7 @@ class MaterialItem {
     required this.id,
     required this.name,
     required this.rarity,
-    required this.description,
+    this.description,
     required this.materialType,
     required this.weekdays,
   });
@@ -15,7 +15,7 @@ class MaterialItem {
   String id;
   String name;
   int rarity;
-  String description;
+  String? description;
   AscensionMaterialType materialType;
   List<Weekday> weekdays;
 

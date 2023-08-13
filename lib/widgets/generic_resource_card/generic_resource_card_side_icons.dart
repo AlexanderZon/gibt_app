@@ -61,9 +61,7 @@ class GenericResourceCardSideIconItem extends StatelessWidget {
       } else {
         return Container();
       }
-    }
-
-    ;
+    };
 
     return Stack(
       children: [

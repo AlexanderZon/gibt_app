@@ -46,7 +46,7 @@ class FarmingMaterialDetailsScreen extends StatelessWidget {
                         style: textStyle,
                       ),
                       Text(
-                        material.material.description,
+                        material.material.description ?? "-",
                         style: textStyle,
                       ),
                     ],

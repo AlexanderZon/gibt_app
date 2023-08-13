@@ -167,7 +167,7 @@ class Character {
 }
 
 // ignore: constant_identifier_names
-enum _Association { INAZUMA, MONDSTADT, LIYUE, FATUI, RANGER, SUMERU }
+enum _Association { INAZUMA, MONDSTADT, LIYUE, FATUI, RANGER, SUMERU, FONTAINE }
 
 final associationValues = EnumValues({
   "Fatui": _Association.FATUI,
@@ -175,7 +175,8 @@ final associationValues = EnumValues({
   "Liyue": _Association.LIYUE,
   "Mondstadt": _Association.MONDSTADT,
   "Ranger": _Association.RANGER,
-  "Sumeru": _Association.SUMERU
+  "Sumeru": _Association.SUMERU,
+  "Fontaine": _Association.FONTAINE,
 });
 
 // ignore: constant_identifier_names

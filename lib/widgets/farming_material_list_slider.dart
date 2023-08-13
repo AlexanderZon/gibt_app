@@ -64,7 +64,8 @@ class FarmingMaterialResourceCard extends StatelessWidget {
                 if (firstAccountCharacter.type == 'weapon')
                   GenericResourceCardSideIconData(
                       image:
-                          'assets/weapons/${firstAccountCharacter.accountCharacter.weaponId}_icon.webp'),
+                          'assets/weapons/${firstAccountCharacter.accountCharacter.weaponId}_icon.webp',
+                      hasMore: data.items.length > 1),
                 if (firstAccountCharacter.type != 'weapon')
                   GenericResourceCardSideIconData(
                       image:
