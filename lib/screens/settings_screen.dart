@@ -3,6 +3,7 @@ import 'package:gibt_1/models/account.dart';
 import 'package:gibt_1/providers/account_characters_provider.dart';
 import 'package:gibt_1/providers/accounts_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -32,7 +33,14 @@ class SettingsScreen extends StatelessWidget {
                     return _ContextMenuDemo(
                       account: accounts[index],
                     );
-                  })
+                  }),
+              const Row(
+                children: [
+                  Text("App version"),
+                  Spacer(),
+                  AppVersionViewer(),
+                ],
+              )
             ],
           ),
         ),
@@ -55,6 +63,43 @@ class SettingsScreen extends StatelessWidget {
         builder: (context) => AccountFormDialog(
               account: account,
             ));
+  }
+}
+
+class AppVersionViewer extends StatefulWidget {
+  const AppVersionViewer({
+    super.key,
+  });
+
+  @override
+  State<AppVersionViewer> createState() => _AppVersionViewerState();
+}
+
+class _AppVersionViewerState extends State<AppVersionViewer> {
+  String? appVersion;
+  String? appBuildName;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    _getAppInfo();
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return (appVersion != null && appBuildName != null)
+        ? Text("$appVersion+$appBuildName")
+        : const Text('...');
+  }
+
+  void _getAppInfo() async {
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+
+    setState(() {
+      appVersion = packageInfo.version;
+      appBuildName = packageInfo.buildNumber;
+    });
   }
 }
 
