@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:gibt_1/models/models.dart';
 
 class WeaponsProvider extends ChangeNotifier {
@@ -15,18 +14,16 @@ class WeaponsProvider extends ChangeNotifier {
   WeaponsProvider() {
     getOnDisplayWeapons();
   }
-  Future<String> readJson() async {
-    final String response =
-        await rootBundle.loadString('assets/data/weapons.json');
-    return response;
+
+  updatesFromDataProvider(List<Weapon> weapons, WeaponsProvider previousState) {
+    onDisplayWeapons = weapons;
+    notifyListeners();
   }
 
   getOnDisplayWeapons() async {
-    var jsonData = await readJson();
-
-    final charactersList = WeaponsList.fromRawJson(jsonData);
-
-    onDisplayWeapons = charactersList.list;
+    if (onDisplayWeapons.isEmpty) {
+      return null;
+    }
     notifyListeners();
   }
 }

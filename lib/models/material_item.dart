@@ -48,6 +48,7 @@ class MaterialItem {
 }
 
 enum AscensionMaterialType {
+  EXPERIENCE,
   JEWEL,
   ELEMENTAL_STONE,
   LOCAL_MATERIAL,
@@ -60,6 +61,7 @@ enum AscensionMaterialType {
 }
 
 final materialTypeValues = EnumValues({
+  "Experience": AscensionMaterialType.EXPERIENCE,
   "Book": AscensionMaterialType.BOOK,
   "BossItem": AscensionMaterialType.BOSS_ITEM,
   "CommonItem": AscensionMaterialType.COMMON_ITEM,

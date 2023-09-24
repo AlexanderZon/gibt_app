@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:gibt_1/models/models.dart';
 
 class CharactersProvider extends ChangeNotifier {
@@ -15,18 +14,17 @@ class CharactersProvider extends ChangeNotifier {
   CharactersProvider() {
     getOnDisplayCharacters();
   }
-  Future<String> readJson() async {
-    final String response =
-        await rootBundle.loadString('assets/data/characters.json');
-    return response;
+
+  updatesFromDataProvider(
+      List<Character> characters, CharactersProvider previousState) {
+    onDisplayCharacters = characters;
+    notifyListeners();
   }
 
   getOnDisplayCharacters() async {
-    var jsonData = await readJson();
-
-    final charactersList = CharactersList.fromRawJson(jsonData);
-
-    onDisplayCharacters = charactersList.list;
+    if (onDisplayCharacters.isEmpty) {
+      return null;
+    }
     notifyListeners();
   }
 }

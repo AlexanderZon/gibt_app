@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gibt_1/providers/account_characters_provider.dart';
 import 'package:gibt_1/providers/accounts_provider.dart';
 import 'package:gibt_1/providers/characters_provider.dart';
+import 'package:gibt_1/providers/data_provider.dart';
 import 'package:gibt_1/providers/home_provider.dart';
 import 'package:gibt_1/providers/weapons_provider.dart';
 import 'package:gibt_1/screens/screens.dart';
@@ -20,25 +21,29 @@ class AppState extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => CharactersProvider(),
+          create: (_) => DataProvider(),
           lazy: false,
         ),
+        ChangeNotifierProxyProvider<DataProvider, CharactersProvider>(
+            create: (_) => CharactersProvider(),
+            update: (_, characters, previousState) => previousState!
+              ..updatesFromDataProvider(characters.characters, previousState)),
+        ChangeNotifierProxyProvider<DataProvider, WeaponsProvider>(
+            create: (_) => WeaponsProvider(),
+            update: (_, characters, previousState) => previousState!
+              ..updatesFromDataProvider(characters.weapons, previousState)),
         ChangeNotifierProvider(
           create: (_) => AccountsProvider(),
           lazy: false,
         ),
-        ChangeNotifierProvider(
-          create: (_) => AccountCharactersProvider(),
-          lazy: false,
-        ),
-        ChangeNotifierProvider(
-          create: (_) => WeaponsProvider(),
-          lazy: false,
-        ),
+        ChangeNotifierProxyProvider<DataProvider, AccountCharactersProvider>(
+            create: (_) => AccountCharactersProvider(),
+            update: (_, data, previousState) =>
+                previousState!..updatesFromDataProvider(data, previousState)),
         ChangeNotifierProxyProvider<AccountCharactersProvider, HomeProvider>(
             create: (_) => HomeProvider(),
-            update: (_, accountCharacters, previousState) =>
-                previousState!..updates(accountCharacters.list, previousState))
+            update: (_, accountCharacters, previousState) => previousState!
+              ..updatesFromAccountCharacters(accountCharacters, previousState))
       ],
       child: const MyApp(),
     );

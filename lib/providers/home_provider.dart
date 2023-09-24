@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gibt_1/models/models.dart';
+import 'package:gibt_1/providers/account_characters_provider.dart';
 
 class HomeProvider extends ChangeNotifier {
   bool loading = false;
@@ -47,10 +49,16 @@ class HomeProvider extends ChangeNotifier {
     return response;
   }
 
-  void updates(
-      List<AccountCharacter> accountCharacters, HomeProvider previousState) {
-    buildingCharacters =
-        accountCharacters.where((element) => element.isBuilding).toList();
+  void updatesFromAccountCharacters(
+      AccountCharactersProvider accountCharactersProvider,
+      HomeProvider previousState) {
+    log("loading from home provider ${buildingCharacters.length}bc and ${charactersList.length}char");
+    buildingCharacters = accountCharactersProvider.list
+        .where((element) => element.isBuilding)
+        .toList();
+    charactersList = accountCharactersProvider.charactersList;
+    weaponsList = accountCharactersProvider.weaponsList;
+    materialsList = accountCharactersProvider.materialsList;
     getOnDisplayMaterials();
   }
 
@@ -77,14 +85,12 @@ class HomeProvider extends ChangeNotifier {
   }
 
   getOnDisplayMaterials() async {
-    var materialsJsonData = await readJson('materials');
-    materialsList = MaterialsList.fromRawJson(materialsJsonData).list;
-
-    var charactersJsonData = await readJson('characters');
-    charactersList = CharactersList.fromRawJson(charactersJsonData).list;
-
-    var weaponsJsonData = await readJson('weapons');
-    weaponsList = WeaponsList.fromRawJson(weaponsJsonData).list;
+    if (buildingCharacters.isEmpty ||
+        charactersList.isEmpty ||
+        weaponsList.isEmpty ||
+        materialsList.isEmpty) {
+      return null;
+    }
 
     // Map AccountCharacters with Reltionships
     buildingCharacters = buildingCharacters.map((e) {

@@ -62,7 +62,9 @@ flutter:
     - assets/materials/
     - assets/elements/
     - assets/weapons/
-    - assets/data/characters.json
+    - assets/data/characters/
+    - assets/data/weapons/
+    - assets/data/materials/
     - assets/data/materials.json
     - assets/data/weapons.json
     - assets/
