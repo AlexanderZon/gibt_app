@@ -602,9 +602,8 @@ class DataProvider extends ChangeNotifier {
   }
 
   Future<String> readJson(String folder, String filename) async {
-    final String response =
-        await rootBundle.loadString('assets/data/$folder/$filename.json');
-    log("reading $folder/$filename.json file");
+    final String response = await rootBundle
+        .loadString('assets/data/$folder/$filename.json', cache: false);
     return response;
   }
 
