@@ -68,9 +68,9 @@ final materialTypeValues = EnumValues({
   "ElementalStone": AscensionMaterialType.ELEMENTAL_STONE,
   "Jewel": AscensionMaterialType.JEWEL,
   "LocalMaterial": AscensionMaterialType.LOCAL_MATERIAL,
-  "PrimaryAscensionMaterial,": AscensionMaterialType.PRIMARY_ASCENSION_MATERIAL,
+  "PrimaryAscensionMaterial": AscensionMaterialType.PRIMARY_ASCENSION_MATERIAL,
   "RewardItem": AscensionMaterialType.REWARD_ITEM,
-  "SecondaryAscensionMaterial,":
+  "SecondaryAscensionMaterial":
       AscensionMaterialType.SECONDARY_ASCENSION_MATERIAL
 });
 
