@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -83,10 +82,13 @@ class DataProvider extends ChangeNotifier {
     'freminet_085', // Freminet
     'wriothesley_086', // Wriothesley
     'neuvillette_087', // Neuvillette
+    'charlotte_088', // Charlotte
+    'furina_089', // Furina
   ];
 
   List<String> weaponsData = [
     //############################ Swords
+    'i_n11513', // Splendor of Tranquil Waters
     'i_n11512', // Light of Foliar Incision
     'i_n11511', // Key of Khaj-Nisut
     'i_n11510', // Haran Geppaku Futsu
@@ -96,6 +98,7 @@ class DataProvider extends ChangeNotifier {
     'i_n11503', // Freedom-Sworn
     'i_n11502', // Skyward Blade
     'i_n11501', // Aquila Favonia
+    'i_n11428', // Sword of Narzissenkreuz
     'i_n11427', // The Dockhand's Assistant
     'i_n11426', // Fleuve Cendre Ferryman
     'i_n11425', // Finale of the Deep
@@ -487,10 +490,12 @@ class DataProvider extends ChangeNotifier {
     "i_n101222",
     "i_n101223",
     "i_n101225",
+    "i_n101232",
     "i_n101233",
     "i_n101235",
     "i_n101236",
     "i_n101237",
+    "i_n101238",
     "i_n101239",
     "i_n104329",
     "i_n104330",
@@ -564,6 +569,9 @@ class DataProvider extends ChangeNotifier {
     "i_n113051",
     "i_n113052",
     "i_n113053",
+    "i_n113054",
+    "i_n113056",
+    "i_n113057",
     "i_n114037",
     "i_n114038",
     "i_n114039",
