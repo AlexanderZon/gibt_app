@@ -86,6 +86,8 @@ class DataProvider extends ChangeNotifier {
     'furina_089', // Furina
     'chevreuse_090', // Chevreuse
     'navia_091', // Navia
+    'gaming_092', // Gaming
+    'liuyun_093', // Xianyun
   ];
 
   List<String> weaponsData = [
@@ -139,6 +141,7 @@ class DataProvider extends ChangeNotifier {
     'i_n12502', // Wolf's Gravestone
     'i_n12501', // Skyward Pride
     'i_n12427', // Portable Power Saw
+    'i_n12426', // "Ultimate Overlord's Mega Magic Sword"
     'i_n12425', // Tidal Shadow
     'i_n12424', // Talking Stick
     'i_n12418', // Mailed Flower
@@ -197,6 +200,7 @@ class DataProvider extends ChangeNotifier {
     'i_n13201', // Iron Point
     'i_n13101', // Beginner's Protector
     //############################ Catalyst
+    'i_n14515', // Crane's Echoing Call
     'i_n14514', // Tome of the Eternal Flow
     'i_n14513', // Cashflow Supervision
     'i_n14512', // Tulaytullah's Remembrance
@@ -500,6 +504,8 @@ class DataProvider extends ChangeNotifier {
     "i_n101237",
     "i_n101238",
     "i_n101239",
+    "i_n101240",
+    "i_n101241",
     "i_n104329",
     "i_n104330",
     "i_n104331",
@@ -554,6 +560,9 @@ class DataProvider extends ChangeNotifier {
     "i_n112092",
     "i_n112093",
     "i_n112094",
+    "i_n112095",
+    "i_n112096",
+    "i_n112097",
     "i_n113036",
     "i_n113037",
     "i_n113038",
@@ -573,8 +582,10 @@ class DataProvider extends ChangeNotifier {
     "i_n113052",
     "i_n113053",
     "i_n113054",
+    "i_n113055",
     "i_n113056",
     "i_n113057",
+    "i_n113058",
     "i_n114037",
     "i_n114038",
     "i_n114039",
