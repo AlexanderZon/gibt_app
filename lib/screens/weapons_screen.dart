@@ -72,7 +72,9 @@ class WeaponsScreen extends StatelessWidget {
     const double cardAspectRatio = 0.9;
 
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: const Text('GI Building Tool | Weapons List'),
+        ),
         body: GridView.count(
           primary: false,
           padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 20),

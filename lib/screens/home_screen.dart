@@ -19,18 +19,22 @@ class HomeScreen extends StatelessWidget {
 
     if (homeProvider.loading) {
       return Scaffold(
-          appBar: AppBar(),
+          appBar: AppBar(
+            title: const Text('GI Building Tool'),
+          ),
           body: const Center(child: CircularProgressIndicator(value: null)));
     }
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: const Text('GI Building Tool | Farming List'),
+        ),
         body: SingleChildScrollView(
           child: Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text(
+                  const Text(
                     'Farming for Today',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                   ),
@@ -38,17 +42,17 @@ class HomeScreen extends StatelessWidget {
                       onPressed: homeProvider.canSubDay
                           ? () => homeProvider.subFarmingDay()
                           : null,
-                      icon: Icon(Icons.chevron_left)),
+                      icon: const Icon(Icons.chevron_left)),
                   Column(
                     children: [
                       Text(
                         homeProvider.farmingDateDay,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 16, fontWeight: FontWeight.w600),
                       ),
                       Text(
                         homeProvider.farmingDate,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w600),
                       ),
                     ],
@@ -57,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                       onPressed: homeProvider.canAddDay
                           ? () => homeProvider.addFarmingDay()
                           : null,
-                      icon: Icon(Icons.chevron_right)),
+                      icon: const Icon(Icons.chevron_right)),
                 ],
               ),
               FarmingMaterialsListSlider(
