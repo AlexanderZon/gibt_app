@@ -88,10 +88,12 @@ class DataProvider extends ChangeNotifier {
     'navia_091', // Navia
     'gaming_092', // Gaming
     'liuyun_093', // Xianyun
+    'chiori_094', // Chiori
   ];
 
   List<String> weaponsData = [
     //############################ Swords
+    'i_n11514', // Urakugo Rensai
     'i_n11513', // Splendor of Tranquil Waters
     'i_n11512', // Light of Foliar Incision
     'i_n11511', // Key of Khaj-Nisut
@@ -133,7 +135,7 @@ class DataProvider extends ChangeNotifier {
     'i_n11201', // Silver Sword
     'i_n11101', // Dull Blade
     //############################ Claymore
-    'i_n12512', // Considered Judgment
+    'i_n12512', // Verdict
     'i_n12511', // Beacon of the Reed Sea
     'i_n12510', // Redhorn Stonethresher
     'i_n12504', // The Unforged

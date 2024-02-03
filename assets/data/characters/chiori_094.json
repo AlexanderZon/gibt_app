@@ -1,113 +1,113 @@
 {
-    "id": "liuyun_093",
-    "name": "Xianyun",
-    "title": "Passerine Herald",
-    "occupation": "Mt. Aocang",
-    "association": "Liyue",
+    "id": "chiori_094",
+    "name": "Chiori",
+    "title": "???",
+    "occupation": "???",
+    "association": "Inazuma",
     "rarity": 5,
-    "weapon_type": "Catalyst",
+    "weapon_type": "Sword",
     "element": "unknown",
-    "day_of_birth": "11",
-    "month_of_birth": "4",
-    "vision": "Anemo",
-    "constellation": "Grus Serena",
-    "description": "One of the Mighty and Illuminated Adepti of Jueyun, known as \"Cloud Retainer.\"Expert in all kinds of mechanical contraptions, her heart now turns towardsthe affairs of the mortal world, through which she walks under the name\"Xianyun.\"",
+    "day_of_birth": "1",
+    "month_of_birth": "1",
+    "vision": "Geo",
+    "constellation": "???",
     "ascension_materials": [
         {
-            "id": "i_351",
-            "name": "Vayuda Turquoise Sliver"
+            "id": "i_361",
+            "name": "Prithiva Topaz Sliver"
         },
         {
-            "id": "i_352",
-            "name": "Vayuda Turquoise Fragment"
+            "id": "i_362",
+            "name": "Prithiva Topaz Fragment"
         },
         {
-            "id": "i_353",
-            "name": "Vayuda Turquoise Chunk"
+            "id": "i_363",
+            "name": "Prithiva Topaz Chunk"
         },
         {
-            "id": "i_354",
-            "name": "Vayuda Turquoise Gemstone"
+            "id": "i_364",
+            "name": "Prithiva Topaz Gemstone"
         },
         {
-            "id": "i_n113058",
-            "name": "Cloudseam Scale"
+            "id": "i_n113049",
+            "name": "Artificed Spare Clockwork Component \u2014 Coppelia"
         },
         {
-            "id": "i_n101241",
-            "name": "Clearwater Jade"
+            "id": "i_680",
+            "name": "Dendrobium"
         },
         {
-            "id": "i_41",
-            "name": "Divining Scroll"
+            "id": "i_185",
+            "name": "Spectral Husk"
         },
         {
-            "id": "i_42",
-            "name": "Sealed Scroll"
+            "id": "i_186",
+            "name": "Spectral Heart"
         },
         {
-            "id": "i_43",
-            "name": "Forbidden Curse Scroll"
+            "id": "i_187",
+            "name": "Spectral Nucleus"
         }
     ],
     "skill_ascension_materials": [
         {
-            "id": "i_431",
-            "name": "Teachings of Gold"
+            "id": "i_426",
+            "name": "Teachings of Light"
         },
         {
-            "id": "i_432",
-            "name": "Guide to Gold"
+            "id": "i_427",
+            "name": "Guide to Light"
         },
         {
-            "id": "i_433",
-            "name": "Philosophies of Gold"
+            "id": "i_428",
+            "name": "Philosophies of Light"
         },
         {
-            "id": "i_n113055",
-            "name": "Lightless Eye of the Maelstrom"
+            "id": "i_n113054",
+            "name": "Lightless Silk String"
         },
         {
             "id": "i_491",
             "name": "Crown of Insight"
         }
     ],
-    "order": 77,
+    "description": "(Without description)",
+    "order": 78,
     "stats": [
         {
             "level": "20",
-            "hp": 2102.0,
-            "atk": 67.62,
-            "def": 115.62,
+            "hp": 2310.0,
+            "atk": 65.21,
+            "def": 192.45,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "Atk%",
+            "variable_stat": "CritRate%",
             "variable_stat_value": 0.0,
             "materials": []
         },
         {
             "level": "20+",
-            "hp": 2797.0,
-            "atk": 89.97,
-            "def": 153.84,
+            "hp": 3073.0,
+            "atk": 86.76,
+            "def": 256.06,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "Atk%",
+            "variable_stat": "CritRate%",
             "variable_stat_value": 0.0,
             "materials": [
                 {
-                    "id": "i_351",
-                    "name": "Vayuda Turquoise Sliver",
+                    "id": "i_361",
+                    "name": "Prithiva Topaz Sliver",
                     "quantity": 1
                 },
                 {
-                    "id": "i_n101241",
-                    "name": "Clearwater Jade",
+                    "id": "i_680",
+                    "name": "Dendrobium",
                     "quantity": 3
                 },
                 {
-                    "id": "i_41",
-                    "name": "Divining Scroll",
+                    "id": "i_185",
+                    "name": "Spectral Husk",
                     "quantity": 3
                 },
                 {
@@ -119,43 +119,43 @@
         },
         {
             "level": "40",
-            "hp": 4185.0,
-            "atk": 134.62,
-            "def": 230.2,
+            "hp": 4598.0,
+            "atk": 129.82,
+            "def": 383.14,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "Atk%",
+            "variable_stat": "CritRate%",
             "variable_stat_value": 0.0,
             "materials": []
         },
         {
             "level": "40+",
-            "hp": 4678.0,
-            "atk": 150.5,
-            "def": 257.35,
+            "hp": 5141.0,
+            "atk": 145.13,
+            "def": 428.34,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "Atk%",
-            "variable_stat_value": 7.2,
+            "variable_stat": "CritRate%",
+            "variable_stat_value": 4.8,
             "materials": [
                 {
-                    "id": "i_352",
-                    "name": "Vayuda Turquoise Fragment",
+                    "id": "i_362",
+                    "name": "Prithiva Topaz Fragment",
                     "quantity": 3
                 },
                 {
-                    "id": "i_n113058",
-                    "name": "Cloudseam Scale",
+                    "id": "i_n113049",
+                    "name": "Artificed Spare Clockwork Component \u2014 Coppelia",
                     "quantity": 2
                 },
                 {
-                    "id": "i_n101241",
-                    "name": "Clearwater Jade",
+                    "id": "i_680",
+                    "name": "Dendrobium",
                     "quantity": 10
                 },
                 {
-                    "id": "i_41",
-                    "name": "Divining Scroll",
+                    "id": "i_185",
+                    "name": "Spectral Husk",
                     "quantity": 15
                 },
                 {
@@ -167,43 +167,43 @@
         },
         {
             "level": "50",
-            "hp": 5383.0,
-            "atk": 173.16,
-            "def": 296.09,
+            "hp": 5915.0,
+            "atk": 166.97,
+            "def": 492.81,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "Atk%",
-            "variable_stat_value": 7.2,
+            "variable_stat": "CritRate%",
+            "variable_stat_value": 4.8,
             "materials": []
         },
         {
             "level": "50+",
-            "hp": 6041.0,
-            "atk": 194.33,
-            "def": 332.29,
+            "hp": 6638.0,
+            "atk": 187.39,
+            "def": 553.08,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "Atk%",
-            "variable_stat_value": 14.4,
+            "variable_stat": "CritRate%",
+            "variable_stat_value": 9.6,
             "materials": [
                 {
-                    "id": "i_352",
-                    "name": "Vayuda Turquoise Fragment",
+                    "id": "i_362",
+                    "name": "Prithiva Topaz Fragment",
                     "quantity": 6
                 },
                 {
-                    "id": "i_n113058",
-                    "name": "Cloudseam Scale",
+                    "id": "i_n113049",
+                    "name": "Artificed Spare Clockwork Component \u2014 Coppelia",
                     "quantity": 4
                 },
                 {
-                    "id": "i_n101241",
-                    "name": "Clearwater Jade",
+                    "id": "i_680",
+                    "name": "Dendrobium",
                     "quantity": 20
                 },
                 {
-                    "id": "i_42",
-                    "name": "Sealed Scroll",
+                    "id": "i_186",
+                    "name": "Spectral Heart",
                     "quantity": 12
                 },
                 {
@@ -215,43 +215,43 @@
         },
         {
             "level": "60",
-            "hp": 6752.0,
-            "atk": 217.22,
-            "def": 371.43,
+            "hp": 7420.0,
+            "atk": 209.46,
+            "def": 618.22,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "Atk%",
-            "variable_stat_value": 14.4,
+            "variable_stat": "CritRate%",
+            "variable_stat_value": 9.6,
             "materials": []
         },
         {
             "level": "60+",
-            "hp": 7246.0,
-            "atk": 233.1,
-            "def": 398.58,
+            "hp": 7962.0,
+            "atk": 224.77,
+            "def": 663.41,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "Atk%",
-            "variable_stat_value": 14.4,
+            "variable_stat": "CritRate%",
+            "variable_stat_value": 9.6,
             "materials": [
                 {
-                    "id": "i_353",
-                    "name": "Vayuda Turquoise Chunk",
+                    "id": "i_363",
+                    "name": "Prithiva Topaz Chunk",
                     "quantity": 3
                 },
                 {
-                    "id": "i_n113058",
-                    "name": "Cloudseam Scale",
+                    "id": "i_n113049",
+                    "name": "Artificed Spare Clockwork Component \u2014 Coppelia",
                     "quantity": 8
                 },
                 {
-                    "id": "i_n101241",
-                    "name": "Clearwater Jade",
+                    "id": "i_680",
+                    "name": "Dendrobium",
                     "quantity": 30
                 },
                 {
-                    "id": "i_42",
-                    "name": "Sealed Scroll",
+                    "id": "i_186",
+                    "name": "Spectral Heart",
                     "quantity": 18
                 },
                 {
@@ -263,43 +263,43 @@
         },
         {
             "level": "70",
-            "hp": 7964.0,
-            "atk": 256.19,
-            "def": 438.08,
+            "hp": 8751.0,
+            "atk": 247.04,
+            "def": 729.15,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "Atk%",
-            "variable_stat_value": 14.4,
+            "variable_stat": "CritRate%",
+            "variable_stat_value": 9.6,
             "materials": []
         },
         {
             "level": "70+",
-            "hp": 8458.0,
-            "atk": 272.07,
-            "def": 465.23,
+            "hp": 9293.0,
+            "atk": 262.36,
+            "def": 774.34,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "Atk%",
-            "variable_stat_value": 21.6,
+            "variable_stat": "CritRate%",
+            "variable_stat_value": 14.4,
             "materials": [
                 {
-                    "id": "i_353",
-                    "name": "Vayuda Turquoise Chunk",
+                    "id": "i_363",
+                    "name": "Prithiva Topaz Chunk",
                     "quantity": 6
                 },
                 {
-                    "id": "i_n113058",
-                    "name": "Cloudseam Scale",
+                    "id": "i_n113049",
+                    "name": "Artificed Spare Clockwork Component \u2014 Coppelia",
                     "quantity": 12
                 },
                 {
-                    "id": "i_n101241",
-                    "name": "Clearwater Jade",
+                    "id": "i_680",
+                    "name": "Dendrobium",
                     "quantity": 45
                 },
                 {
-                    "id": "i_43",
-                    "name": "Forbidden Curse Scroll",
+                    "id": "i_187",
+                    "name": "Spectral Nucleus",
                     "quantity": 12
                 },
                 {
@@ -311,43 +311,43 @@
         },
         {
             "level": "80",
-            "hp": 9184.0,
-            "atk": 295.43,
-            "def": 505.17,
+            "hp": 10091.0,
+            "atk": 284.88,
+            "def": 840.82,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "Atk%",
-            "variable_stat_value": 21.6,
+            "variable_stat": "CritRate%",
+            "variable_stat_value": 14.4,
             "materials": []
         },
         {
             "level": "80+",
-            "hp": 9677.0,
-            "atk": 311.31,
-            "def": 532.32,
+            "hp": 10634.0,
+            "atk": 300.19,
+            "def": 886.01,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "Atk%",
-            "variable_stat_value": 28.8,
+            "variable_stat": "CritRate%",
+            "variable_stat_value": 19.2,
             "materials": [
                 {
-                    "id": "i_354",
-                    "name": "Vayuda Turquoise Gemstone",
+                    "id": "i_364",
+                    "name": "Prithiva Topaz Gemstone",
                     "quantity": 6
                 },
                 {
-                    "id": "i_n113058",
-                    "name": "Cloudseam Scale",
+                    "id": "i_n113049",
+                    "name": "Artificed Spare Clockwork Component \u2014 Coppelia",
                     "quantity": 20
                 },
                 {
-                    "id": "i_n101241",
-                    "name": "Clearwater Jade",
+                    "id": "i_680",
+                    "name": "Dendrobium",
                     "quantity": 60
                 },
                 {
-                    "id": "i_43",
-                    "name": "Forbidden Curse Scroll",
+                    "id": "i_187",
+                    "name": "Spectral Nucleus",
                     "quantity": 24
                 },
                 {
@@ -359,13 +359,13 @@
         },
         {
             "level": "90",
-            "hp": 10409.0,
-            "atk": 334.85,
-            "def": 572.57,
+            "hp": 11438.0,
+            "atk": 322.89,
+            "def": 953.01,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "Atk%",
-            "variable_stat_value": 28.8,
+            "variable_stat": "CritRate%",
+            "variable_stat_value": 19.2,
             "materials": []
         }
     ],
@@ -374,13 +374,13 @@
             "level": "2",
             "materials": [
                 {
-                    "id": "i_431",
-                    "name": "Teachings of Gold",
+                    "id": "i_426",
+                    "name": "Teachings of Light",
                     "quantity": 3
                 },
                 {
-                    "id": "i_41",
-                    "name": "Divining Scroll",
+                    "id": "i_185",
+                    "name": "Spectral Husk",
                     "quantity": 6
                 },
                 {
@@ -394,13 +394,13 @@
             "level": "3",
             "materials": [
                 {
-                    "id": "i_432",
-                    "name": "Guide to Gold",
+                    "id": "i_427",
+                    "name": "Guide to Light",
                     "quantity": 2
                 },
                 {
-                    "id": "i_42",
-                    "name": "Sealed Scroll",
+                    "id": "i_186",
+                    "name": "Spectral Heart",
                     "quantity": 3
                 },
                 {
@@ -414,13 +414,13 @@
             "level": "4",
             "materials": [
                 {
-                    "id": "i_432",
-                    "name": "Guide to Gold",
+                    "id": "i_427",
+                    "name": "Guide to Light",
                     "quantity": 4
                 },
                 {
-                    "id": "i_42",
-                    "name": "Sealed Scroll",
+                    "id": "i_186",
+                    "name": "Spectral Heart",
                     "quantity": 4
                 },
                 {
@@ -434,13 +434,13 @@
             "level": "5",
             "materials": [
                 {
-                    "id": "i_432",
-                    "name": "Guide to Gold",
+                    "id": "i_427",
+                    "name": "Guide to Light",
                     "quantity": 6
                 },
                 {
-                    "id": "i_42",
-                    "name": "Sealed Scroll",
+                    "id": "i_186",
+                    "name": "Spectral Heart",
                     "quantity": 6
                 },
                 {
@@ -454,13 +454,13 @@
             "level": "6",
             "materials": [
                 {
-                    "id": "i_432",
-                    "name": "Guide to Gold",
+                    "id": "i_427",
+                    "name": "Guide to Light",
                     "quantity": 9
                 },
                 {
-                    "id": "i_42",
-                    "name": "Sealed Scroll",
+                    "id": "i_186",
+                    "name": "Spectral Heart",
                     "quantity": 9
                 },
                 {
@@ -474,18 +474,18 @@
             "level": "7",
             "materials": [
                 {
-                    "id": "i_433",
-                    "name": "Philosophies of Gold",
+                    "id": "i_428",
+                    "name": "Philosophies of Light",
                     "quantity": 4
                 },
                 {
-                    "id": "i_43",
-                    "name": "Forbidden Curse Scroll",
+                    "id": "i_187",
+                    "name": "Spectral Nucleus",
                     "quantity": 4
                 },
                 {
-                    "id": "i_n113055",
-                    "name": "Lightless Eye of the Maelstrom",
+                    "id": "i_n113054",
+                    "name": "Lightless Silk String",
                     "quantity": 1
                 },
                 {
@@ -499,18 +499,18 @@
             "level": "8",
             "materials": [
                 {
-                    "id": "i_433",
-                    "name": "Philosophies of Gold",
+                    "id": "i_428",
+                    "name": "Philosophies of Light",
                     "quantity": 6
                 },
                 {
-                    "id": "i_43",
-                    "name": "Forbidden Curse Scroll",
+                    "id": "i_187",
+                    "name": "Spectral Nucleus",
                     "quantity": 6
                 },
                 {
-                    "id": "i_n113055",
-                    "name": "Lightless Eye of the Maelstrom",
+                    "id": "i_n113054",
+                    "name": "Lightless Silk String",
                     "quantity": 1
                 },
                 {
@@ -524,18 +524,18 @@
             "level": "9",
             "materials": [
                 {
-                    "id": "i_433",
-                    "name": "Philosophies of Gold",
+                    "id": "i_428",
+                    "name": "Philosophies of Light",
                     "quantity": 12
                 },
                 {
-                    "id": "i_43",
-                    "name": "Forbidden Curse Scroll",
+                    "id": "i_187",
+                    "name": "Spectral Nucleus",
                     "quantity": 9
                 },
                 {
-                    "id": "i_n113055",
-                    "name": "Lightless Eye of the Maelstrom",
+                    "id": "i_n113054",
+                    "name": "Lightless Silk String",
                     "quantity": 2
                 },
                 {
@@ -549,18 +549,18 @@
             "level": "10",
             "materials": [
                 {
-                    "id": "i_433",
-                    "name": "Philosophies of Gold",
+                    "id": "i_428",
+                    "name": "Philosophies of Light",
                     "quantity": 16
                 },
                 {
-                    "id": "i_43",
-                    "name": "Forbidden Curse Scroll",
+                    "id": "i_187",
+                    "name": "Spectral Nucleus",
                     "quantity": 12
                 },
                 {
-                    "id": "i_n113055",
-                    "name": "Lightless Eye of the Maelstrom",
+                    "id": "i_n113054",
+                    "name": "Lightless Silk String",
                     "quantity": 2
                 },
                 {
