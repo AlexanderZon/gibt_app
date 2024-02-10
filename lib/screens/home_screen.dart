@@ -19,15 +19,11 @@ class HomeScreen extends StatelessWidget {
 
     if (homeProvider.loading) {
       return Scaffold(
-          appBar: AppBar(
-            title: const Text('GI Building Tool'),
-          ),
+          appBar: AppBar(),
           body: const Center(child: CircularProgressIndicator(value: null)));
     }
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('GI Building Tool | Farming List'),
-        ),
+        appBar: AppBar(),
         body: SingleChildScrollView(
           child: Column(
             children: [

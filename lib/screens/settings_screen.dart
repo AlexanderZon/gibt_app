@@ -15,9 +15,7 @@ class SettingsScreen extends StatelessWidget {
     final accounts = accountsProvider.list;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('GI Building Tool | Settings'),
-      ),
+      appBar: AppBar(),
       body: SizedBox(
         height: 500,
         width: double.infinity,
