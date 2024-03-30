@@ -1,77 +1,77 @@
 {
-    "id": "chiori_094",
-    "name": "Chiori",
-    "title": "The Thundering Seamstress",
-    "occupation": "Court of Fontaine",
-    "association": "Inazuma",
+    "id": "arlecchino_096",
+    "name": "Arlecchino",
+    "title": "Dire Balemoon",
+    "occupation": "Fatui",
+    "association": "Fatui",
     "rarity": 5,
-    "weapon_type": "Sword",
+    "weapon_type": "Polearm",
     "element": "unknown",
-    "day_of_birth": "17",
+    "day_of_birth": "22",
     "month_of_birth": "8",
-    "vision": "Geo",
-    "constellation": "Cisoria",
+    "vision": "Pyro",
+    "constellation": "Ignis Purgatorius",
     "ascension_materials": [
         {
-            "id": "i_361",
-            "name": "Prithiva Topaz Sliver"
+            "id": "i_311",
+            "name": "Agnidus Agate Sliver"
         },
         {
-            "id": "i_362",
-            "name": "Prithiva Topaz Fragment"
+            "id": "i_312",
+            "name": "Agnidus Agate Fragment"
         },
         {
-            "id": "i_363",
-            "name": "Prithiva Topaz Chunk"
+            "id": "i_313",
+            "name": "Agnidus Agate Chunk"
         },
         {
-            "id": "i_364",
-            "name": "Prithiva Topaz Gemstone"
+            "id": "i_314",
+            "name": "Agnidus Agate Gemstone"
         },
         {
-            "id": "i_n113049",
-            "name": "Artificed Spare Clockwork Component \u2014 Coppelia"
+            "id": "i_n113059",
+            "name": "Fragment of a Golden Melody"
         },
         {
-            "id": "i_680",
-            "name": "Dendrobium"
+            "id": "i_n101236",
+            "name": "Rainbow Rose"
         },
         {
-            "id": "i_185",
-            "name": "Spectral Husk"
+            "id": "i_111",
+            "name": "Recruit's Insignia"
         },
         {
-            "id": "i_186",
-            "name": "Spectral Heart"
+            "id": "i_112",
+            "name": "Sergeant's Insignia"
         },
         {
-            "id": "i_187",
-            "name": "Spectral Nucleus"
+            "id": "i_113",
+            "name": "Lieutenant's Insignia"
         }
     ],
     "skill_ascension_materials": [
         {
-            "id": "i_426",
-            "name": "Teachings of Light"
+            "id": "i_n104344",
+            "name": "Teachings of Order"
         },
         {
-            "id": "i_427",
-            "name": "Guide to Light"
+            "id": "i_n104345",
+            "name": "Guide to Order"
         },
         {
-            "id": "i_428",
-            "name": "Philosophies of Light"
+            "id": "i_n104346",
+            "name": "Philosophies of Order"
         },
         {
-            "id": "i_n113054",
-            "name": "Lightless Silk String"
+            "id": "i_n113060",
+            "name": "???"
         },
         {
             "id": "i_491",
             "name": "Crown of Insight"
         }
     ],
-    "description": "The owner of Chioriya Boutique. A tailor renowned throughout Fontaine.",
+    "description": "愚人众执行官第四席，「仆人」。沉静冷酷的外交官，「壁炉之家」所有孩子们畏惧又依赖的「父亲」。",
     "order": 78,
     "stats": [
         {
@@ -81,7 +81,7 @@
             "def": 192.45,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "CritRate%",
+            "variable_stat": "CritDMG%",
             "variable_stat_value": 0.0,
             "materials": []
         },
@@ -92,22 +92,22 @@
             "def": 256.06,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "CritRate%",
+            "variable_stat": "CritDMG%",
             "variable_stat_value": 0.0,
             "materials": [
                 {
-                    "id": "i_361",
-                    "name": "Prithiva Topaz Sliver",
+                    "id": "i_311",
+                    "name": "Agnidus Agate Sliver",
                     "quantity": 1
                 },
                 {
-                    "id": "i_680",
-                    "name": "Dendrobium",
+                    "id": "i_n101236",
+                    "name": "Rainbow Rose",
                     "quantity": 3
                 },
                 {
-                    "id": "i_185",
-                    "name": "Spectral Husk",
+                    "id": "i_111",
+                    "name": "Recruit's Insignia",
                     "quantity": 3
                 },
                 {
@@ -124,7 +124,7 @@
             "def": 383.14,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "CritRate%",
+            "variable_stat": "CritDMG%",
             "variable_stat_value": 0.0,
             "materials": []
         },
@@ -135,27 +135,27 @@
             "def": 428.34,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "CritRate%",
+            "variable_stat": "CritDMG%",
             "variable_stat_value": 4.8,
             "materials": [
                 {
-                    "id": "i_362",
-                    "name": "Prithiva Topaz Fragment",
+                    "id": "i_312",
+                    "name": "Agnidus Agate Fragment",
                     "quantity": 3
                 },
                 {
-                    "id": "i_n113049",
-                    "name": "Artificed Spare Clockwork Component \u2014 Coppelia",
+                    "id": "i_n113059",
+                    "name": "Fragment of a Golden Melody",
                     "quantity": 2
                 },
                 {
-                    "id": "i_680",
-                    "name": "Dendrobium",
+                    "id": "i_n101236",
+                    "name": "Rainbow Rose",
                     "quantity": 10
                 },
                 {
-                    "id": "i_185",
-                    "name": "Spectral Husk",
+                    "id": "i_111",
+                    "name": "Recruit's Insignia",
                     "quantity": 15
                 },
                 {
@@ -172,7 +172,7 @@
             "def": 492.81,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "CritRate%",
+            "variable_stat": "CritDMG%",
             "variable_stat_value": 4.8,
             "materials": []
         },
@@ -183,27 +183,27 @@
             "def": 553.08,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "CritRate%",
+            "variable_stat": "CritDMG%",
             "variable_stat_value": 9.6,
             "materials": [
                 {
-                    "id": "i_362",
-                    "name": "Prithiva Topaz Fragment",
+                    "id": "i_312",
+                    "name": "Agnidus Agate Fragment",
                     "quantity": 6
                 },
                 {
-                    "id": "i_n113049",
-                    "name": "Artificed Spare Clockwork Component \u2014 Coppelia",
+                    "id": "i_n113059",
+                    "name": "Fragment of a Golden Melody",
                     "quantity": 4
                 },
                 {
-                    "id": "i_680",
-                    "name": "Dendrobium",
+                    "id": "i_n101236",
+                    "name": "Rainbow Rose",
                     "quantity": 20
                 },
                 {
-                    "id": "i_186",
-                    "name": "Spectral Heart",
+                    "id": "i_112",
+                    "name": "Sergeant's Insignia",
                     "quantity": 12
                 },
                 {
@@ -220,7 +220,7 @@
             "def": 618.22,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "CritRate%",
+            "variable_stat": "CritDMG%",
             "variable_stat_value": 9.6,
             "materials": []
         },
@@ -231,27 +231,27 @@
             "def": 663.41,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "CritRate%",
+            "variable_stat": "CritDMG%",
             "variable_stat_value": 9.6,
             "materials": [
                 {
-                    "id": "i_363",
-                    "name": "Prithiva Topaz Chunk",
+                    "id": "i_313",
+                    "name": "Agnidus Agate Chunk",
                     "quantity": 3
                 },
                 {
-                    "id": "i_n113049",
-                    "name": "Artificed Spare Clockwork Component \u2014 Coppelia",
+                    "id": "i_n113059",
+                    "name": "Fragment of a Golden Melody",
                     "quantity": 8
                 },
                 {
-                    "id": "i_680",
-                    "name": "Dendrobium",
+                    "id": "i_n101236",
+                    "name": "Rainbow Rose",
                     "quantity": 30
                 },
                 {
-                    "id": "i_186",
-                    "name": "Spectral Heart",
+                    "id": "i_112",
+                    "name": "Sergeant's Insignia",
                     "quantity": 18
                 },
                 {
@@ -268,7 +268,7 @@
             "def": 729.15,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "CritRate%",
+            "variable_stat": "CritDMG%",
             "variable_stat_value": 9.6,
             "materials": []
         },
@@ -279,27 +279,27 @@
             "def": 774.34,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "CritRate%",
+            "variable_stat": "CritDMG%",
             "variable_stat_value": 14.4,
             "materials": [
                 {
-                    "id": "i_363",
-                    "name": "Prithiva Topaz Chunk",
+                    "id": "i_313",
+                    "name": "Agnidus Agate Chunk",
                     "quantity": 6
                 },
                 {
-                    "id": "i_n113049",
-                    "name": "Artificed Spare Clockwork Component \u2014 Coppelia",
+                    "id": "i_n113059",
+                    "name": "Fragment of a Golden Melody",
                     "quantity": 12
                 },
                 {
-                    "id": "i_680",
-                    "name": "Dendrobium",
+                    "id": "i_n101236",
+                    "name": "Rainbow Rose",
                     "quantity": 45
                 },
                 {
-                    "id": "i_187",
-                    "name": "Spectral Nucleus",
+                    "id": "i_113",
+                    "name": "Lieutenant's Insignia",
                     "quantity": 12
                 },
                 {
@@ -316,7 +316,7 @@
             "def": 840.82,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "CritRate%",
+            "variable_stat": "CritDMG%",
             "variable_stat_value": 14.4,
             "materials": []
         },
@@ -327,27 +327,27 @@
             "def": 886.01,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "CritRate%",
+            "variable_stat": "CritDMG%",
             "variable_stat_value": 19.2,
             "materials": [
                 {
-                    "id": "i_364",
-                    "name": "Prithiva Topaz Gemstone",
+                    "id": "i_314",
+                    "name": "Agnidus Agate Gemstone",
                     "quantity": 6
                 },
                 {
-                    "id": "i_n113049",
-                    "name": "Artificed Spare Clockwork Component \u2014 Coppelia",
+                    "id": "i_n113059",
+                    "name": "Fragment of a Golden Melody",
                     "quantity": 20
                 },
                 {
-                    "id": "i_680",
-                    "name": "Dendrobium",
+                    "id": "i_n101236",
+                    "name": "Rainbow Rose",
                     "quantity": 60
                 },
                 {
-                    "id": "i_187",
-                    "name": "Spectral Nucleus",
+                    "id": "i_113",
+                    "name": "Lieutenant's Insignia",
                     "quantity": 24
                 },
                 {
@@ -364,7 +364,7 @@
             "def": 953.01,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
-            "variable_stat": "CritRate%",
+            "variable_stat": "CritDMG%",
             "variable_stat_value": 19.2,
             "materials": []
         }
@@ -374,13 +374,13 @@
             "level": "2",
             "materials": [
                 {
-                    "id": "i_426",
-                    "name": "Teachings of Light",
+                    "id": "i_n104344",
+                    "name": "Teachings of Order",
                     "quantity": 3
                 },
                 {
-                    "id": "i_185",
-                    "name": "Spectral Husk",
+                    "id": "i_111",
+                    "name": "Recruit's Insignia",
                     "quantity": 6
                 },
                 {
@@ -394,13 +394,13 @@
             "level": "3",
             "materials": [
                 {
-                    "id": "i_427",
-                    "name": "Guide to Light",
+                    "id": "i_n104345",
+                    "name": "Guide to Order",
                     "quantity": 2
                 },
                 {
-                    "id": "i_186",
-                    "name": "Spectral Heart",
+                    "id": "i_112",
+                    "name": "Sergeant's Insignia",
                     "quantity": 3
                 },
                 {
@@ -414,13 +414,13 @@
             "level": "4",
             "materials": [
                 {
-                    "id": "i_427",
-                    "name": "Guide to Light",
+                    "id": "i_n104345",
+                    "name": "Guide to Order",
                     "quantity": 4
                 },
                 {
-                    "id": "i_186",
-                    "name": "Spectral Heart",
+                    "id": "i_112",
+                    "name": "Sergeant's Insignia",
                     "quantity": 4
                 },
                 {
@@ -434,13 +434,13 @@
             "level": "5",
             "materials": [
                 {
-                    "id": "i_427",
-                    "name": "Guide to Light",
+                    "id": "i_n104345",
+                    "name": "Guide to Order",
                     "quantity": 6
                 },
                 {
-                    "id": "i_186",
-                    "name": "Spectral Heart",
+                    "id": "i_112",
+                    "name": "Sergeant's Insignia",
                     "quantity": 6
                 },
                 {
@@ -454,13 +454,13 @@
             "level": "6",
             "materials": [
                 {
-                    "id": "i_427",
-                    "name": "Guide to Light",
+                    "id": "i_n104345",
+                    "name": "Guide to Order",
                     "quantity": 9
                 },
                 {
-                    "id": "i_186",
-                    "name": "Spectral Heart",
+                    "id": "i_112",
+                    "name": "Sergeant's Insignia",
                     "quantity": 9
                 },
                 {
@@ -474,18 +474,18 @@
             "level": "7",
             "materials": [
                 {
-                    "id": "i_428",
-                    "name": "Philosophies of Light",
+                    "id": "i_n104346",
+                    "name": "Philosophies of Order",
                     "quantity": 4
                 },
                 {
-                    "id": "i_187",
-                    "name": "Spectral Nucleus",
+                    "id": "i_113",
+                    "name": "Lieutenant's Insignia",
                     "quantity": 4
                 },
                 {
-                    "id": "i_n113054",
-                    "name": "Lightless Silk String",
+                    "id": "i_n113060",
+                    "name": "???",
                     "quantity": 1
                 },
                 {
@@ -499,18 +499,18 @@
             "level": "8",
             "materials": [
                 {
-                    "id": "i_428",
-                    "name": "Philosophies of Light",
+                    "id": "i_n104346",
+                    "name": "Philosophies of Order",
                     "quantity": 6
                 },
                 {
-                    "id": "i_187",
-                    "name": "Spectral Nucleus",
+                    "id": "i_113",
+                    "name": "Lieutenant's Insignia",
                     "quantity": 6
                 },
                 {
-                    "id": "i_n113054",
-                    "name": "Lightless Silk String",
+                    "id": "i_n113060",
+                    "name": "???",
                     "quantity": 1
                 },
                 {
@@ -524,18 +524,18 @@
             "level": "9",
             "materials": [
                 {
-                    "id": "i_428",
-                    "name": "Philosophies of Light",
+                    "id": "i_n104346",
+                    "name": "Philosophies of Order",
                     "quantity": 12
                 },
                 {
-                    "id": "i_187",
-                    "name": "Spectral Nucleus",
+                    "id": "i_113",
+                    "name": "Lieutenant's Insignia",
                     "quantity": 9
                 },
                 {
-                    "id": "i_n113054",
-                    "name": "Lightless Silk String",
+                    "id": "i_n113060",
+                    "name": "???",
                     "quantity": 2
                 },
                 {
@@ -549,18 +549,18 @@
             "level": "10",
             "materials": [
                 {
-                    "id": "i_428",
-                    "name": "Philosophies of Light",
+                    "id": "i_n104346",
+                    "name": "Philosophies of Order",
                     "quantity": 16
                 },
                 {
-                    "id": "i_187",
-                    "name": "Spectral Nucleus",
+                    "id": "i_113",
+                    "name": "Lieutenant's Insignia",
                     "quantity": 12
                 },
                 {
-                    "id": "i_n113054",
-                    "name": "Lightless Silk String",
+                    "id": "i_n113060",
+                    "name": "???",
                     "quantity": 2
                 },
                 {

@@ -89,6 +89,7 @@ class DataProvider extends ChangeNotifier {
     'gaming_092', // Gaming
     'liuyun_093', // Xianyun
     'chiori_094', // Chiori
+    'arlecchino_096', // Arlecchino
   ];
 
   List<String> weaponsData = [
@@ -172,6 +173,7 @@ class DataProvider extends ChangeNotifier {
     'i_n12201', // Old Merc's Pal
     'i_n12101', // Waster Greatsword
     //############################ Polearm
+    'i_n13512', // Crimson Moon's Semblance
     'i_n13511', // Staff of the Scarlet Sands
     'i_n13509', // Engulfing Lightning
     'i_n13507', // Calamity Queller
@@ -565,6 +567,9 @@ class DataProvider extends ChangeNotifier {
     "i_n112095",
     "i_n112096",
     "i_n112097",
+    "i_n112098",
+    "i_n112099",
+    "i_n112100",
     "i_n113036",
     "i_n113037",
     "i_n113038",
@@ -588,6 +593,9 @@ class DataProvider extends ChangeNotifier {
     "i_n113056",
     "i_n113057",
     "i_n113058",
+    "i_n113059",
+    "i_n113060",
+    "i_n113061",
     "i_n114037",
     "i_n114038",
     "i_n114039",
