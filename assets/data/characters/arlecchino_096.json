@@ -11,6 +11,7 @@
     "month_of_birth": "8",
     "vision": "Pyro",
     "constellation": "Ignis Purgatorius",
+    "description": "\"The Knave,\" Fourth of the Fatui Harbingers. A poised, ruthless diplomat. Tothe children in the House of the Hearth, she is their feared yet dependable\"Father.\"",
     "ascension_materials": [
         {
             "id": "i_311",
@@ -64,21 +65,20 @@
         },
         {
             "id": "i_n113060",
-            "name": "???"
+            "name": "Fading Candle"
         },
         {
             "id": "i_491",
             "name": "Crown of Insight"
         }
     ],
-    "description": "愚人众执行官第四席，「仆人」。沉静冷酷的外交官，「壁炉之家」所有孩子们畏惧又依赖的「父亲」。",
-    "order": 78,
+    "order": 1,
     "stats": [
         {
             "level": "20",
-            "hp": 2310.0,
-            "atk": 65.21,
-            "def": 192.45,
+            "hp": 2646.0,
+            "atk": 69.07,
+            "def": 154.42,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
             "variable_stat": "CritDMG%",
@@ -87,9 +87,9 @@
         },
         {
             "level": "20+",
-            "hp": 3073.0,
-            "atk": 86.76,
-            "def": 256.06,
+            "hp": 3521.0,
+            "atk": 91.9,
+            "def": 205.47,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
             "variable_stat": "CritDMG%",
@@ -119,9 +119,9 @@
         },
         {
             "level": "40",
-            "hp": 4598.0,
-            "atk": 129.82,
-            "def": 383.14,
+            "hp": 5268.0,
+            "atk": 137.51,
+            "def": 307.44,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
             "variable_stat": "CritDMG%",
@@ -130,13 +130,13 @@
         },
         {
             "level": "40+",
-            "hp": 5141.0,
-            "atk": 145.13,
-            "def": 428.34,
+            "hp": 5889.0,
+            "atk": 153.73,
+            "def": 343.71,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
             "variable_stat": "CritDMG%",
-            "variable_stat_value": 4.8,
+            "variable_stat_value": 9.6,
             "materials": [
                 {
                     "id": "i_312",
@@ -167,24 +167,24 @@
         },
         {
             "level": "50",
-            "hp": 5915.0,
-            "atk": 166.97,
-            "def": 492.81,
-            "crit_rate": 5.0,
-            "crit_dmg": 50.0,
-            "variable_stat": "CritDMG%",
-            "variable_stat_value": 4.8,
-            "materials": []
-        },
-        {
-            "level": "50+",
-            "hp": 6638.0,
-            "atk": 187.39,
-            "def": 553.08,
+            "hp": 6776.0,
+            "atk": 176.87,
+            "def": 395.44,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
             "variable_stat": "CritDMG%",
             "variable_stat_value": 9.6,
+            "materials": []
+        },
+        {
+            "level": "50+",
+            "hp": 7604.0,
+            "atk": 198.49,
+            "def": 443.8,
+            "crit_rate": 5.0,
+            "crit_dmg": 50.0,
+            "variable_stat": "CritDMG%",
+            "variable_stat_value": 19.2,
             "materials": [
                 {
                     "id": "i_312",
@@ -215,24 +215,24 @@
         },
         {
             "level": "60",
-            "hp": 7420.0,
-            "atk": 209.46,
-            "def": 618.22,
+            "hp": 8500.0,
+            "atk": 221.87,
+            "def": 496.07,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
             "variable_stat": "CritDMG%",
-            "variable_stat_value": 9.6,
+            "variable_stat_value": 19.2,
             "materials": []
         },
         {
             "level": "60+",
-            "hp": 7962.0,
-            "atk": 224.77,
-            "def": 663.41,
+            "hp": 9121.0,
+            "atk": 238.09,
+            "def": 532.34,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
             "variable_stat": "CritDMG%",
-            "variable_stat_value": 9.6,
+            "variable_stat_value": 19.2,
             "materials": [
                 {
                     "id": "i_313",
@@ -263,24 +263,24 @@
         },
         {
             "level": "70",
-            "hp": 8751.0,
-            "atk": 247.04,
-            "def": 729.15,
+            "hp": 10025.0,
+            "atk": 261.68,
+            "def": 585.08,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
             "variable_stat": "CritDMG%",
-            "variable_stat_value": 9.6,
+            "variable_stat_value": 19.2,
             "materials": []
         },
         {
             "level": "70+",
-            "hp": 9293.0,
-            "atk": 262.36,
-            "def": 774.34,
+            "hp": 10647.0,
+            "atk": 277.9,
+            "def": 621.35,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
             "variable_stat": "CritDMG%",
-            "variable_stat_value": 14.4,
+            "variable_stat_value": 28.8,
             "materials": [
                 {
                     "id": "i_313",
@@ -311,24 +311,24 @@
         },
         {
             "level": "80",
-            "hp": 10091.0,
-            "atk": 284.88,
-            "def": 840.82,
+            "hp": 11561.0,
+            "atk": 301.76,
+            "def": 674.69,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
             "variable_stat": "CritDMG%",
-            "variable_stat_value": 14.4,
+            "variable_stat_value": 28.8,
             "materials": []
         },
         {
             "level": "80+",
-            "hp": 10634.0,
-            "atk": 300.19,
-            "def": 886.01,
+            "hp": 12182.0,
+            "atk": 317.98,
+            "def": 710.96,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
             "variable_stat": "CritDMG%",
-            "variable_stat_value": 19.2,
+            "variable_stat_value": 38.4,
             "materials": [
                 {
                     "id": "i_314",
@@ -359,13 +359,13 @@
         },
         {
             "level": "90",
-            "hp": 11438.0,
-            "atk": 322.89,
-            "def": 953.01,
+            "hp": 13103.0,
+            "atk": 342.03,
+            "def": 764.71,
             "crit_rate": 5.0,
             "crit_dmg": 50.0,
             "variable_stat": "CritDMG%",
-            "variable_stat_value": 19.2,
+            "variable_stat_value": 38.4,
             "materials": []
         }
     ],
@@ -485,7 +485,7 @@
                 },
                 {
                     "id": "i_n113060",
-                    "name": "???",
+                    "name": "Fading Candle",
                     "quantity": 1
                 },
                 {
@@ -510,7 +510,7 @@
                 },
                 {
                     "id": "i_n113060",
-                    "name": "???",
+                    "name": "Fading Candle",
                     "quantity": 1
                 },
                 {
@@ -535,7 +535,7 @@
                 },
                 {
                     "id": "i_n113060",
-                    "name": "???",
+                    "name": "Fading Candle",
                     "quantity": 2
                 },
                 {
@@ -560,7 +560,7 @@
                 },
                 {
                     "id": "i_n113060",
-                    "name": "???",
+                    "name": "Fading Candle",
                     "quantity": 2
                 },
                 {

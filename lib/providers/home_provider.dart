@@ -85,10 +85,13 @@ class HomeProvider extends ChangeNotifier {
   }
 
   getOnDisplayMaterials() async {
+    print('getOnDisplayMaterials');
     if (buildingCharacters.isEmpty ||
         charactersList.isEmpty ||
         weaponsList.isEmpty ||
         materialsList.isEmpty) {
+      loading = false;
+      notifyListeners();
       return null;
     }
 
