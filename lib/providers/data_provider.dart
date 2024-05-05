@@ -90,10 +90,14 @@ class DataProvider extends ChangeNotifier {
     'liuyun_093', // Xianyun
     'chiori_094', // Chiori
     'arlecchino_096', // Arlecchino
+    'sigewinne_095', // Sigewinne
+    'sethos_097', // Sethos
+    'clorinde_098', // Clorinde
   ];
 
   List<String> weaponsData = [
     //############################ Swords
+    'i_n11515', // Absolution
     'i_n11514', // Urakugo Rensai
     'i_n11513', // Splendor of Tranquil Waters
     'i_n11512', // Light of Foliar Incision
@@ -243,6 +247,7 @@ class DataProvider extends ChangeNotifier {
     'i_n14201', // Pocket Grimoire
     'i_n14101', // Apprentice's Notes
     //############################ Bow
+    'i_n15513', // Pouring Heartstrings
     'i_n15512', // The First Great Magic
     'i_n15511', // Hunter's Path
     'i_n15509', // Thundering Pulse
@@ -252,6 +257,7 @@ class DataProvider extends ChangeNotifier {
     'i_n15502', // Amos' Bow
     'i_n15501', // Skyward Harp
     'i_n15427', // Range Gauge
+    'i_n15426', // Cloudweaver
     'i_n15425', // Song of Stillness
     'i_n15424', // Scion of the Blazing Sun
     'i_n15419', // Ibis Piercer
@@ -500,6 +506,7 @@ class DataProvider extends ChangeNotifier {
     "i_n101220",
     "i_n101222",
     "i_n101223",
+    "i_n101224",
     "i_n101225",
     "i_n101232",
     "i_n101233",
