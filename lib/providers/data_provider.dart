@@ -93,6 +93,7 @@ class DataProvider extends ChangeNotifier {
     'sigewinne_095', // Sigewinne
     'sethos_097', // Sethos
     'clorinde_098', // Clorinde
+    'emilie_099', // Emilie
   ];
 
   List<String> weaponsData = [
@@ -177,6 +178,7 @@ class DataProvider extends ChangeNotifier {
     'i_n12201', // Old Merc's Pal
     'i_n12101', // Waster Greatsword
     //############################ Polearm
+    'i_n13513', // Lumidouce Elegy
     'i_n13512', // Crimson Moon's Semblance
     'i_n13511', // Staff of the Scarlet Sands
     'i_n13509', // Engulfing Lightning
@@ -247,7 +249,7 @@ class DataProvider extends ChangeNotifier {
     'i_n14201', // Pocket Grimoire
     'i_n14101', // Apprentice's Notes
     //############################ Bow
-    'i_n15513', // Pouring Heartstrings
+    'i_n15513', // Silvershower Heartstrings
     'i_n15512', // The First Great Magic
     'i_n15511', // Hunter's Path
     'i_n15509', // Thundering Pulse
