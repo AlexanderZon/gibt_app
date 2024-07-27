@@ -52,7 +52,6 @@ class HomeProvider extends ChangeNotifier {
   void updatesFromAccountCharacters(
       AccountCharactersProvider accountCharactersProvider,
       HomeProvider previousState) {
-    log("loading from home provider ${buildingCharacters.length}bc and ${charactersList.length}char");
     buildingCharacters = accountCharactersProvider.list
         .where((element) => element.isBuilding)
         .toList();

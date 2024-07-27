@@ -94,6 +94,9 @@ class DataProvider extends ChangeNotifier {
     'sethos_097', // Sethos
     'clorinde_098', // Clorinde
     'emilie_099', // Emilie
+    'kachina_100', // Kachina
+    'kinich_101', // Kinich
+    'mualani_102', // Mualani
   ];
 
   List<String> weaponsData = [
@@ -141,6 +144,7 @@ class DataProvider extends ChangeNotifier {
     'i_n11201', // Silver Sword
     'i_n11101', // Dull Blade
     //############################ Claymore
+    'i_n12513', // Mountain King's Fang
     'i_n12512', // Verdict
     'i_n12511', // Beacon of the Reed Sea
     'i_n12510', // Redhorn Stonethresher
@@ -148,6 +152,7 @@ class DataProvider extends ChangeNotifier {
     'i_n12503', // Song of Broken Pines
     'i_n12502', // Wolf's Gravestone
     'i_n12501', // Skyward Pride
+    'i_n12431', // Earthshaker
     'i_n12427', // Portable Power Saw
     'i_n12426', // "Ultimate Overlord's Mega Magic Sword"
     'i_n12425', // Tidal Shadow
@@ -187,6 +192,7 @@ class DataProvider extends ChangeNotifier {
     'i_n13504', // Vortex Vanquisher
     'i_n13502', // Skyward Spine
     'i_n13501', // Staff of Homa
+    'i_n13431', // The Rainbow's Trail
     'i_n13427', // Prospector's Drill
     'i_n13425', // Rightful Reward
     'i_n13424', // Ballad of the Fjords
@@ -210,6 +216,7 @@ class DataProvider extends ChangeNotifier {
     'i_n13201', // Iron Point
     'i_n13101', // Beginner's Protector
     //############################ Catalyst
+    'i_n14516', // Surfing Time
     'i_n14515', // Crane's Echoing Call
     'i_n14514', // Tome of the Eternal Flow
     'i_n14513', // Cashflow Supervision
@@ -221,6 +228,8 @@ class DataProvider extends ChangeNotifier {
     'i_n14504', // Memory of Dust
     'i_n14502', // Lost Prayer to the Sacred Winds
     'i_n14501', // Skyward Atlas
+    'i_n14431', // Ring of Ceiba
+    'i_n14427', // Ash-Graven Drinking Horn
     'i_n14426', // Ballad of the Boundless Blue
     'i_n14425', // Flowing Purity
     'i_n14424', // Sacrificial Jade
@@ -258,8 +267,9 @@ class DataProvider extends ChangeNotifier {
     'i_n15503', // Elegy for the End
     'i_n15502', // Amos' Bow
     'i_n15501', // Skyward Harp
+    'i_n15431', // Shattered Chains
     'i_n15427', // Range Gauge
-    'i_n15426', // Cloudweaver
+    'i_n15426', // Cloudforged
     'i_n15425', // Song of Stillness
     'i_n15424', // Scion of the Blazing Sun
     'i_n15419', // Ibis Piercer
@@ -519,6 +529,9 @@ class DataProvider extends ChangeNotifier {
     "i_n101239",
     "i_n101240",
     "i_n101241",
+    "i_n101247",
+    "i_n101249",
+    "i_n101250",
     "i_n104329",
     "i_n104330",
     "i_n104331",
@@ -537,6 +550,15 @@ class DataProvider extends ChangeNotifier {
     "i_n104344",
     "i_n104345",
     "i_n104346",
+    "i_n104347",
+    "i_n104348",
+    "i_n104349",
+    "i_n104350",
+    "i_n104351",
+    "i_n104352",
+    "i_n104353",
+    "i_n104354",
+    "i_n104355",
     "i_n112059",
     "i_n112060",
     "i_n112061",
@@ -579,6 +601,21 @@ class DataProvider extends ChangeNotifier {
     "i_n112098",
     "i_n112099",
     "i_n112100",
+    "i_n112101",
+    "i_n112102",
+    "i_n112103",
+    "i_n112104",
+    "i_n112105",
+    "i_n112106",
+    "i_n112107",
+    "i_n112108",
+    "i_n112109",
+    "i_n112110",
+    "i_n112111",
+    "i_n112112",
+    "i_n112113",
+    "i_n112114",
+    "i_n112115",
     "i_n113036",
     "i_n113037",
     "i_n113038",
@@ -605,6 +642,9 @@ class DataProvider extends ChangeNotifier {
     "i_n113059",
     "i_n113060",
     "i_n113061",
+    "i_n113062",
+    "i_n113064",
+    "i_n113065",
     "i_n114037",
     "i_n114038",
     "i_n114039",
@@ -628,7 +668,19 @@ class DataProvider extends ChangeNotifier {
     "i_n114057",
     "i_n114058",
     "i_n114059",
-    "i_n114060"
+    "i_n114060",
+    "i_n114061",
+    "i_n114062",
+    "i_n114063",
+    "i_n114064",
+    "i_n114065",
+    "i_n114066",
+    "i_n114067",
+    "i_n114068",
+    "i_n114069",
+    "i_n114070",
+    "i_n114071",
+    "i_n114072"
   ];
 
   final StreamController<List<Character>> _suggestionStreamController =

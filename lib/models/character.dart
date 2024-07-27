@@ -103,8 +103,7 @@ class Character {
   }
 
   bool isUsingSkillMaterial(MaterialItem material) {
-    return skillAscensionMaterials
-        .any((ascMat) => ascMat.id == material.id);
+    return skillAscensionMaterials.any((ascMat) => ascMat.id == material.id);
   }
 
   int getSkillsMaterialQuantity(
@@ -122,9 +121,7 @@ class Character {
       if (lvl > basicTalentLevel ||
           lvl > elementalTalentLevel ||
           lvl > burstTalentLevel) {
-        if (skills[i]
-            .materials
-            .any((element) => element.id == material.id)) {
+        if (skills[i].materials.any((element) => element.id == material.id)) {
           var skillMaterial = skills[i]
               .materials
               .firstWhere((element) => element.id == material.id);
@@ -167,7 +164,17 @@ class Character {
 }
 
 // ignore: constant_identifier_names
-enum _Association { INAZUMA, MONDSTADT, LIYUE, FATUI, RANGER, SUMERU, FONTAINE }
+enum _Association {
+  INAZUMA,
+  MONDSTADT,
+  LIYUE,
+  FATUI,
+  RANGER,
+  SUMERU,
+  FONTAINE,
+  NATLAN,
+  SNEZNAYA
+}
 
 final associationValues = EnumValues({
   "Fatui": _Association.FATUI,
@@ -177,6 +184,8 @@ final associationValues = EnumValues({
   "Ranger": _Association.RANGER,
   "Sumeru": _Association.SUMERU,
   "Fontaine": _Association.FONTAINE,
+  "Natlan": _Association.NATLAN,
+  "Sneznaya": _Association.SNEZNAYA,
 });
 
 // ignore: constant_identifier_names

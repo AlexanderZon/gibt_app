@@ -46,12 +46,15 @@ class SettingsScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.indigo,
+        // backgroundColor: Colors.indigo,
         onPressed: () {
           Account account = Account(name: "", server: "NA", isActive: false);
           openCreateDialog(context, account);
         },
-        child: const Icon(Icons.add),
+        child: const Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
       ),
     );
   }

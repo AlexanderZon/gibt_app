@@ -56,7 +56,6 @@ class AccountCharactersProvider extends ChangeNotifier {
     charactersList = data.characters.toList();
     weaponsList = data.weapons.toList();
     materialsList = data.materials.toList();
-    log("loading account characters provider ${charactersList.length} items");
     notifyListeners();
   }
 }
