@@ -97,10 +97,12 @@ class DataProvider extends ChangeNotifier {
     'kachina_100', // Kachina
     'kinich_101', // Kinich
     'mualani_102', // Mualani
+    'xilonen_103', // Xilonen
   ];
 
   List<String> weaponsData = [
     //############################ Swords
+    'i_n11516', // Peak Patrol Song
     'i_n11515', // Absolution
     'i_n11514', // Urakugo Rensai
     'i_n11513', // Splendor of Tranquil Waters
@@ -113,6 +115,8 @@ class DataProvider extends ChangeNotifier {
     'i_n11503', // Freedom-Sworn
     'i_n11502', // Skyward Blade
     'i_n11501', // Aquila Favonia
+    'i_n11431', // Flute of Ezpitzal
+    'i_n11430', // Sturdy Bone
     'i_n11428', // Sword of Narzissenkreuz
     'i_n11427', // The Dockhand's Assistant
     'i_n11426', // Fleuve Cendre Ferryman
@@ -192,7 +196,8 @@ class DataProvider extends ChangeNotifier {
     'i_n13504', // Vortex Vanquisher
     'i_n13502', // Skyward Spine
     'i_n13501', // Staff of Homa
-    'i_n13431', // The Rainbow's Trail
+    'i_n13431', // Footprint of the Rainbow
+    'i_n13430', // Mountain-Crushing Nail
     'i_n13427', // Prospector's Drill
     'i_n13425', // Rightful Reward
     'i_n13424', // Ballad of the Fjords
@@ -530,6 +535,7 @@ class DataProvider extends ChangeNotifier {
     "i_n101240",
     "i_n101241",
     "i_n101247",
+    "i_n101248",
     "i_n101249",
     "i_n101250",
     "i_n104329",
@@ -645,6 +651,7 @@ class DataProvider extends ChangeNotifier {
     "i_n113062",
     "i_n113064",
     "i_n113065",
+    "i_n113066",
     "i_n114037",
     "i_n114038",
     "i_n114039",
