@@ -189,9 +189,18 @@ final associationValues = EnumValues({
 });
 
 // ignore: constant_identifier_names
-enum Element { UNKNOWN }
+enum Element { UNKNOWN, CRYO, ANEMO, ELECTRO, HYDRO, PYRO, GEO, DENDRO }
 
-final elementValues = EnumValues({"unknown": Element.UNKNOWN});
+final elementValues = EnumValues({
+  "unknown": Element.UNKNOWN,
+  "Anemo": Element.ANEMO,
+  "Cryo": Element.CRYO,
+  "Dendro": Element.DENDRO,
+  "Electro": Element.ELECTRO,
+  "Geo": Element.GEO,
+  "Hydro": Element.HYDRO,
+  "Pyro": Element.PYRO
+});
 
 // ignore: constant_identifier_names
 enum Vision { CRYO, ANEMO, ELECTRO, HYDRO, PYRO, GEO, DENDRO }

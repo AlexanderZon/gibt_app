@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gibt_1/models/models.dart';
@@ -84,7 +83,6 @@ class HomeProvider extends ChangeNotifier {
   }
 
   getOnDisplayMaterials() async {
-    print('getOnDisplayMaterials');
     if (buildingCharacters.isEmpty ||
         charactersList.isEmpty ||
         weaponsList.isEmpty ||
