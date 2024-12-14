@@ -100,6 +100,9 @@ class DataProvider extends ChangeNotifier {
     'xilonen_103', // Xilonen
     'chasca_104', // Chasca
     'olorun_105', // Ororon
+    'mavuika_106', // Mavuika
+    'citlali_107', // Citlali
+    'lanyan_108', // Lan Yan
   ];
 
   List<String> weaponsData = [
@@ -151,6 +154,7 @@ class DataProvider extends ChangeNotifier {
     'i_n11201', // Silver Sword
     'i_n11101', // Dull Blade
     //############################ Claymore
+    'i_n12514', // A Thousand Blazing Suns
     'i_n12513', // Fang of the Mountain King
     'i_n12512', // Verdict
     'i_n12511', // Beacon of the Reed Sea
@@ -225,6 +229,7 @@ class DataProvider extends ChangeNotifier {
     'i_n13201', // Iron Point
     'i_n13101', // Beginner's Protector
     //############################ Catalyst
+    'i_n14517', // Starcaller's Watch
     'i_n14516', // Surf's Up
     'i_n14515', // Crane's Echoing Call
     'i_n14514', // Tome of the Eternal Flow
@@ -665,6 +670,9 @@ class DataProvider extends ChangeNotifier {
     "i_n113065",
     "i_n113066",
     "i_n113067",
+    "i_n113068",
+    "i_n113069",
+    "i_n113071",
     "i_n114037",
     "i_n114038",
     "i_n114039",
