@@ -104,6 +104,8 @@ class DataProvider extends ChangeNotifier {
     'citlali_107', // Citlali
     'lanyan_108', // Lan Yan
     'mizuki_109', // Yumemizuki Mizuki
+    'iansan_110', // Iansan
+    'varesa_111', // Varesa
   ];
 
   List<String> weaponsData = [
@@ -231,6 +233,8 @@ class DataProvider extends ChangeNotifier {
     'i_n13201', // Iron Point
     'i_n13101', // Beginner's Protector
     //############################ Catalyst
+    'i_n14519', // Vivid Notions
+    'i_n14518', // Sunny Morning Sleep-In
     'i_n14517', // Starcaller's Watch
     'i_n14516', // Surf's Up
     'i_n14515', // Crane's Echoing Call
@@ -554,6 +558,8 @@ class DataProvider extends ChangeNotifier {
     "i_n101250",
     "i_n101252",
     "i_n101253",
+    "i_n101254",
+    "i_n101255",
     "i_n104329",
     "i_n104330",
     "i_n104331",
@@ -641,6 +647,9 @@ class DataProvider extends ChangeNotifier {
     "i_n112116",
     "i_n112117",
     "i_n112118",
+    "i_n112119",
+    "i_n112120",
+    "i_n112121",
     "i_n113036",
     "i_n113037",
     "i_n113038",
@@ -674,7 +683,9 @@ class DataProvider extends ChangeNotifier {
     "i_n113067",
     "i_n113068",
     "i_n113069",
+    "i_n113070",
     "i_n113071",
+    "i_n113072",
     "i_n114037",
     "i_n114038",
     "i_n114039",
