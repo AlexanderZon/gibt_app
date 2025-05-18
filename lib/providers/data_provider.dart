@@ -108,10 +108,13 @@ class DataProvider extends ChangeNotifier {
     'varesa_111', // Varesa
     'escoffier_112', // Escoffier
     'ifa_113', // Ifa
+    'skirknew_114', // Skirk
+    'dahlia_115', // Dahlia
   ];
 
   List<String> weaponsData = [
     //############################ Swords
+    'i_n11517', // Azurelight
     'i_n11516', // Peak Patrol Song
     'i_n11515', // Absolution
     'i_n11514', // Urakugo Rensai
@@ -690,6 +693,9 @@ class DataProvider extends ChangeNotifier {
     "i_n113070",
     "i_n113071",
     "i_n113072",
+    "i_n113073",
+    "i_n113074",
+    "i_n113076",
     "i_n114037",
     "i_n114038",
     "i_n114039",

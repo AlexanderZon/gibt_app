@@ -173,7 +173,8 @@ enum _Association {
   SUMERU,
   FONTAINE,
   NATLAN,
-  SNEZNAYA
+  SNEZNAYA,
+  SCOURGE
 }
 
 final associationValues = EnumValues({
@@ -186,6 +187,7 @@ final associationValues = EnumValues({
   "Fontaine": _Association.FONTAINE,
   "Natlan": _Association.NATLAN,
   "Sneznaya": _Association.SNEZNAYA,
+  "Scourge": _Association.SCOURGE,
 });
 
 // ignore: constant_identifier_names
