@@ -15,7 +15,12 @@ class CharacterFormScreen extends StatefulWidget {
 }
 
 class _CharacterFormScreenState extends State<CharacterFormScreen> {
-  final Map<String, dynamic> modelFormSettings = {'tab': 0};
+  final Map<String, dynamic> modelFormSettings = {
+    'tab': 0,
+    'basicTalentMaxLevelToogle': false,
+    'elementalTalentMaxLevelToogle': false,
+    'burstTalentMaxLevelToogle': false,
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -95,8 +100,11 @@ class _CharacterFormScreenState extends State<CharacterFormScreen> {
       'level': actualModel.level,
       'constellations': actualModel.constellations,
       'basicTalentLevel': actualModel.basicTalentLevel,
+      'basicTalentMaxLevel': actualModel.basicTalentMaxLevel,
       'elementalTalentLevel': actualModel.elementalTalentLevel,
+      'elementalTalentMaxLevel': actualModel.elementalTalentMaxLevel,
       'burstTalentLevel': actualModel.burstTalentLevel,
+      'burstTalentMaxLevel': actualModel.burstTalentMaxLevel,
       'weapLevel': actualModel.weapLevel,
       'weapRank': actualModel.weapRank,
       'isBuilding': actualModel.isBuilding,
@@ -127,6 +135,13 @@ class _CharacterFormScreenState extends State<CharacterFormScreen> {
             setState(() {
               modelFormSettings['tab'] = tab;
             });
+          },
+          onToogle: (property) {
+            print('Toogle: $property');
+            setState(() {
+              modelFormSettings[property + 'Toogle'] =
+                  !modelFormSettings[property + 'Toogle'];
+            });
           }),
     );
   }
@@ -145,6 +160,7 @@ class _CharacterFormScreenContent extends StatelessWidget {
     required this.talentLevels,
     required this.accountCharactersProvider,
     required this.onTab,
+    required this.onToogle,
   });
 
   final AccountCharacter actualModel;
@@ -157,14 +173,18 @@ class _CharacterFormScreenContent extends StatelessWidget {
   final List<int> talentLevels;
   final AccountCharactersProvider accountCharactersProvider;
   final Function onTab;
+  final Function onToogle;
 
   void saveCharacterData() {
-    print("Saving character data... $actualModel");
     actualModel.level = modelFormValues['level'];
     actualModel.constellations = modelFormValues['constellations'];
     actualModel.basicTalentLevel = modelFormValues['basicTalentLevel'];
+    actualModel.basicTalentMaxLevel = modelFormValues['basicTalentMaxLevel'];
     actualModel.elementalTalentLevel = modelFormValues['elementalTalentLevel'];
+    actualModel.elementalTalentMaxLevel =
+        modelFormValues['elementalTalentMaxLevel'];
     actualModel.burstTalentLevel = modelFormValues['burstTalentLevel'];
+    actualModel.burstTalentMaxLevel = modelFormValues['burstTalentMaxLevel'];
     actualModel.weapLevel = modelFormValues['weapLevel'];
     actualModel.weapRank = modelFormValues['weapRank'];
     actualModel.isBuilding = modelFormValues['isBuilding'];
@@ -197,27 +217,60 @@ class _CharacterFormScreenContent extends StatelessWidget {
                     formProperty: 'constellations',
                     formValues: modelFormValues,
                     onChange: saveCharacterData),
-                SliderOptionsPicker(
-                    key: const Key("basicTalentLevel"),
-                    label: 'Basic Talent Level',
-                    options: talentLevels,
-                    formProperty: 'basicTalentLevel',
-                    formValues: modelFormValues,
-                    onChange: saveCharacterData),
-                SliderOptionsPicker(
-                    key: const Key("elementalTalentLevel"),
-                    label: 'Elemental Talent Level',
-                    options: talentLevels,
-                    formProperty: 'elementalTalentLevel',
-                    formValues: modelFormValues,
-                    onChange: saveCharacterData),
-                SliderOptionsPicker(
-                    key: const Key("burstTalentLevel"),
-                    label: 'Burst Talent Level',
-                    options: talentLevels,
-                    formProperty: 'burstTalentLevel',
-                    formValues: modelFormValues,
-                    onChange: saveCharacterData),
+                if (!modelFormSettings['basicTalentMaxLevelToogle'])
+                  SliderOptionsPicker(
+                      key: const Key("basicTalentLevel"),
+                      label: 'Basic Talent Level',
+                      options: talentLevels,
+                      formProperty: 'basicTalentLevel',
+                      formValues: modelFormValues,
+                      slotActions: _maxTalentLevelViewer('basicTalent'),
+                      onChange: saveCharacterData),
+                if (modelFormSettings['basicTalentMaxLevelToogle'])
+                  SliderOptionsPicker(
+                      key: const Key("basicTalentMaxLevel"),
+                      label: 'Basic Talent Max Level',
+                      options: talentLevels,
+                      formProperty: 'basicTalentMaxLevel',
+                      formValues: modelFormValues,
+                      slotActions: _maxTalentLevelViewer('basicTalent'),
+                      onChange: saveCharacterData),
+                if (!modelFormSettings['elementalTalentMaxLevelToogle'])
+                  SliderOptionsPicker(
+                      key: const Key("elementalTalentLevel"),
+                      label: 'Elemental Talent Level',
+                      options: talentLevels,
+                      formProperty: 'elementalTalentLevel',
+                      formValues: modelFormValues,
+                      slotActions: _maxTalentLevelViewer('elementalTalent'),
+                      onChange: saveCharacterData),
+                if (modelFormSettings['elementalTalentMaxLevelToogle'])
+                  SliderOptionsPicker(
+                      key: const Key("elementalTalentMaxLevel"),
+                      label: 'Elemental Talent Max Level',
+                      options: talentLevels,
+                      formProperty: 'elementalTalentMaxLevel',
+                      formValues: modelFormValues,
+                      slotActions: _maxTalentLevelViewer('elementalTalent'),
+                      onChange: saveCharacterData),
+                if (!modelFormSettings['burstTalentMaxLevelToogle'])
+                  SliderOptionsPicker(
+                      key: const Key("burstTalentLevel"),
+                      label: 'Burst Talent Level',
+                      options: talentLevels,
+                      formProperty: 'burstTalentLevel',
+                      formValues: modelFormValues,
+                      slotActions: _maxTalentLevelViewer('burstTalent'),
+                      onChange: saveCharacterData),
+                if (modelFormSettings['burstTalentMaxLevelToogle'])
+                  SliderOptionsPicker(
+                      key: const Key("burstTalentMaxLevel"),
+                      label: 'Burst Talent Level',
+                      options: talentLevels,
+                      formProperty: 'burstTalentMaxLevel',
+                      formValues: modelFormValues,
+                      slotActions: _maxTalentLevelViewer('burstTalent'),
+                      onChange: saveCharacterData),
               ])
             else if (modelFormSettings['tab'] == 1)
               Column(children: [
@@ -248,6 +301,33 @@ class _CharacterFormScreenContent extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  _maxTalentLevelViewer(String property) {
+    print('${property}MaxLevelToogle');
+    if (!modelFormSettings['${property}MaxLevelToogle']) {
+      return GestureDetector(
+        onTap: () => onToogle('${property}MaxLevel'),
+        child: Container(
+          padding: const EdgeInsets.all(10),
+          child: Text(
+            'Max Level: ${modelFormValues['${property}MaxLevel']}',
+            style: const TextStyle(fontSize: 12, fontFamily: "Genshin"),
+          ),
+        ),
+      );
+    } else {
+      return GestureDetector(
+        onTap: () => onToogle('${property}MaxLevel'),
+        child: Container(
+          padding: const EdgeInsets.all(10),
+          child: Text(
+            'Actual Level: ${modelFormValues['${property}Level']}',
+            style: const TextStyle(fontSize: 12, fontFamily: "Genshin"),
+          ),
+        ),
+      );
+    }
   }
 }
 

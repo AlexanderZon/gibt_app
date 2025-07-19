@@ -9,6 +9,7 @@ class SliderOptionsPicker extends StatefulWidget {
     required this.formValues,
     this.initialValue,
     required this.onChange,
+    this.slotActions,
   });
 
   final List<dynamic> options;
@@ -17,6 +18,7 @@ class SliderOptionsPicker extends StatefulWidget {
   final Map<String, dynamic> formValues;
   final String? initialValue;
   final Function onChange;
+  final Widget? slotActions;
 
   @override
   State<SliderOptionsPicker> createState() => _SliderOptionsPickerState();
@@ -50,9 +52,15 @@ class _SliderOptionsPickerState extends State<SliderOptionsPicker> {
           Container(
             alignment: Alignment.centerLeft,
             margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-            child: Text(
-              widget.label,
-              style: const TextStyle(fontSize: 16, fontFamily: "Genshin"),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  widget.label,
+                  style: const TextStyle(fontSize: 16, fontFamily: "Genshin"),
+                ),
+                if (widget.slotActions != null) widget.slotActions!,
+              ],
             ),
           ),
           Container(
