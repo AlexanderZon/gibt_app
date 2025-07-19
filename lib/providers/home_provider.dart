@@ -184,7 +184,10 @@ class HomeProvider extends ChangeNotifier {
                   int quantity = e.character!.getSkillsMaterialQuantity(element,
                       basicTalentLevel: e.basicTalentLevel,
                       elementalTalentLevel: e.elementalTalentLevel,
-                      burstTalentLevel: e.burstTalentLevel);
+                      burstTalentLevel: e.burstTalentLevel,
+                      toBasicTalentLevel: e.basicTalentMaxLevel,
+                      toElementalTalentLevel: e.elementalTalentMaxLevel,
+                      toBurstTalentLevel: e.burstTalentMaxLevel);
                   total += quantity;
                   return FarmingMaterialItemData(
                       accountCharacter: e, quantity: quantity, type: 'tallent');
