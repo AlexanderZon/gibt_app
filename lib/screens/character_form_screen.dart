@@ -39,8 +39,11 @@ class _CharacterFormScreenState extends State<CharacterFormScreen> {
             level: '1',
             constellations: 0,
             basicTalentLevel: 1,
+            basicTalentMaxLevel: 9,
             elementalTalentLevel: 1,
+            elementalTalentMaxLevel: 9,
             burstTalentLevel: 1,
+            burstTalentMaxLevel: 9,
             weapLevel: '1',
             weapRank: 1,
             isBuilding: false);
@@ -156,6 +159,7 @@ class _CharacterFormScreenContent extends StatelessWidget {
   final Function onTab;
 
   void saveCharacterData() {
+    print("Saving character data... $actualModel");
     actualModel.level = modelFormValues['level'];
     actualModel.constellations = modelFormValues['constellations'];
     actualModel.basicTalentLevel = modelFormValues['basicTalentLevel'];
