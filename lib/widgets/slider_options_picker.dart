@@ -10,6 +10,7 @@ class SliderOptionsPicker extends StatefulWidget {
     this.initialValue,
     required this.onChange,
     this.slotActions,
+    this.color = Colors.indigo,
   });
 
   final List<dynamic> options;
@@ -19,6 +20,7 @@ class SliderOptionsPicker extends StatefulWidget {
   final String? initialValue;
   final Function onChange;
   final Widget? slotActions;
+  final Color color;
 
   @override
   State<SliderOptionsPicker> createState() => _SliderOptionsPickerState();
@@ -83,8 +85,8 @@ class _SliderOptionsPickerState extends State<SliderOptionsPicker> {
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
-                            border: Border.all(color: Colors.indigo, width: 2),
-                            color: Colors.indigo.withOpacity(.25),
+                            border: Border.all(color: widget.color, width: 2),
+                            color: widget.color.withOpacity(.25),
                           ),
                         ),
                       ),
@@ -142,8 +144,8 @@ class _SliderOptionsPickerState extends State<SliderOptionsPicker> {
                             child: Center(
                                 child: Text(
                               '${widget.options[optionIndex]}',
-                              style: const TextStyle(
-                                  color: Colors.indigo,
+                              style: TextStyle(
+                                  color: widget.color,
                                   fontFamily: "Genshin",
                                   fontSize: 14),
                             )));

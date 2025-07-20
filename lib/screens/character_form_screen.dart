@@ -233,6 +233,7 @@ class _CharacterFormScreenContent extends StatelessWidget {
                       options: talentLevels,
                       formProperty: 'basicTalentMaxLevel',
                       formValues: modelFormValues,
+                      color: Colors.red,
                       slotActions: _maxTalentLevelViewer('basicTalent'),
                       onChange: saveCharacterData),
                 if (!modelFormSettings['elementalTalentMaxLevelToogle'])
@@ -251,6 +252,7 @@ class _CharacterFormScreenContent extends StatelessWidget {
                       options: talentLevels,
                       formProperty: 'elementalTalentMaxLevel',
                       formValues: modelFormValues,
+                      color: Colors.red,
                       slotActions: _maxTalentLevelViewer('elementalTalent'),
                       onChange: saveCharacterData),
                 if (!modelFormSettings['burstTalentMaxLevelToogle'])
@@ -269,6 +271,7 @@ class _CharacterFormScreenContent extends StatelessWidget {
                       options: talentLevels,
                       formProperty: 'burstTalentMaxLevel',
                       formValues: modelFormValues,
+                      color: Colors.red,
                       slotActions: _maxTalentLevelViewer('burstTalent'),
                       onChange: saveCharacterData),
               ])
@@ -304,12 +307,16 @@ class _CharacterFormScreenContent extends StatelessWidget {
   }
 
   _maxTalentLevelViewer(String property) {
-    print('${property}MaxLevelToogle');
     if (!modelFormSettings['${property}MaxLevelToogle']) {
       return GestureDetector(
         onTap: () => onToogle('${property}MaxLevel'),
         child: Container(
-          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5),
+            border: Border.all(color: Colors.red, width: 2),
+            color: Colors.red.withOpacity(.25),
+          ),
+          padding: const EdgeInsets.all(5),
           child: Text(
             'Max Level: ${modelFormValues['${property}MaxLevel']}',
             style: const TextStyle(fontSize: 12, fontFamily: "Genshin"),
@@ -320,7 +327,12 @@ class _CharacterFormScreenContent extends StatelessWidget {
       return GestureDetector(
         onTap: () => onToogle('${property}MaxLevel'),
         child: Container(
-          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5),
+            border: Border.all(color: Colors.indigo, width: 2),
+            color: Colors.indigo.withOpacity(.25),
+          ),
+          padding: const EdgeInsets.all(5),
           child: Text(
             'Actual Level: ${modelFormValues['${property}Level']}',
             style: const TextStyle(fontSize: 12, fontFamily: "Genshin"),
