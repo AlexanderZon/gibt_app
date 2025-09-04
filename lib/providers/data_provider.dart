@@ -111,6 +111,9 @@ class DataProvider extends ChangeNotifier {
     'skirknew_114', // Skirk
     'dahlia_115', // Dahlia
     'ineffa_116', // Ineffa
+    'lauma_119', // Lauma
+    'flins_120', // Flins
+    'aino_121', //  Aino
   ];
 
   List<String> weaponsData = [
@@ -129,6 +132,8 @@ class DataProvider extends ChangeNotifier {
     'i_n11503', // Freedom-Sworn
     'i_n11502', // Skyward Blade
     'i_n11501', // Aquila Favonia
+    'i_n11434', // Moonweaver’s Dawn
+    'i_n11433', // Serenity’s Call
     'i_n11432', // Calamity of Eshu
     'i_n11431', // Flute of Ezpitzal
     'i_n11430', // Sturdy Bone
@@ -172,6 +177,7 @@ class DataProvider extends ChangeNotifier {
     'i_n12503', // Song of Broken Pines
     'i_n12502', // Wolf's Gravestone
     'i_n12501', // Skyward Pride
+    'i_n12433', // Master Key
     'i_n12432', // Flame-Forged Insight
     'i_n12431', // Earth Shaker
     'i_n12430', // Fruitful Hook
@@ -205,6 +211,7 @@ class DataProvider extends ChangeNotifier {
     'i_n12201', // Old Merc's Pal
     'i_n12101', // Waster Greatsword
     //############################ Polearm
+    'i_n13516', // Bloodsoaked Ruins
     'i_n13515', // Fractured Halo
     'i_n13514', // Symphonist of Scents
     'i_n13513', // Lumidouce Elegy
@@ -216,6 +223,7 @@ class DataProvider extends ChangeNotifier {
     'i_n13504', // Vortex Vanquisher
     'i_n13502', // Skyward Spine
     'i_n13501', // Staff of Homa
+    'i_n13433', // Prospector’s Shovel
     'i_n13432', // Tamayuratei no Ohanashi
     'i_n13431', // Footprint of the Rainbow
     'i_n13430', // Mountain-Bracing Bolt
@@ -242,6 +250,7 @@ class DataProvider extends ChangeNotifier {
     'i_n13201', // Iron Point
     'i_n13101', // Beginner's Protector
     //############################ Catalyst
+    'i_n14520', // Nightweaver’s Looking Glass
     'i_n14519', // Vivid Notions
     'i_n14518', // Sunny Morning Sleep-In
     'i_n14517', // Starcaller's Watch
@@ -257,6 +266,8 @@ class DataProvider extends ChangeNotifier {
     'i_n14504', // Memory of Dust
     'i_n14502', // Lost Prayer to the Sacred Winds
     'i_n14501', // Skyward Atlas
+    'i_n14433', // Blackmarrow Lantern
+    'i_n14432', // Etherlight Spindlelute
     'i_n14431', // Ring of Yaxche
     'i_n14430', // Waveriding Whirl
     'i_n14427', // Ash-Graven Drinking Horn
@@ -298,6 +309,7 @@ class DataProvider extends ChangeNotifier {
     'i_n15503', // Elegy for the End
     'i_n15502', // Amos' Bow
     'i_n15501', // Skyward Harp
+    'i_n15433', // Snare Hook
     'i_n15432', // Sequence of Solitude
     'i_n15431', // Chain Breaker
     'i_n15430', // Flower-Wreathed Feathers
@@ -570,6 +582,9 @@ class DataProvider extends ChangeNotifier {
     "i_n101253",
     "i_n101254",
     "i_n101255",
+    "i_n101257",
+    "i_n101261",
+    "i_n101263",
     "i_n104329",
     "i_n104330",
     "i_n104331",
@@ -597,6 +612,15 @@ class DataProvider extends ChangeNotifier {
     "i_n104353",
     "i_n104354",
     "i_n104355",
+    "i_n104356",
+    "i_n104357",
+    "i_n104358",
+    "i_n104359",
+    "i_n104360",
+    "i_n104361",
+    "i_n104362",
+    "i_n104363",
+    "i_n104364",
     "i_n112059",
     "i_n112060",
     "i_n112061",
@@ -660,6 +684,21 @@ class DataProvider extends ChangeNotifier {
     "i_n112119",
     "i_n112120",
     "i_n112121",
+    "i_n112122",
+    "i_n112123",
+    "i_n112124",
+    "i_n112125",
+    "i_n112126",
+    "i_n112127",
+    "i_n112128",
+    "i_n112129",
+    "i_n112130",
+    "i_n112131",
+    "i_n112132",
+    "i_n112133",
+    "i_n112134",
+    "i_n112135",
+    "i_n112136",
     "i_n113036",
     "i_n113037",
     "i_n113038",
@@ -698,7 +737,10 @@ class DataProvider extends ChangeNotifier {
     "i_n113072",
     "i_n113073",
     "i_n113074",
+    "i_n113075",
     "i_n113076",
+    "i_n113077",
+    "i_n113078",
     "i_n114037",
     "i_n114038",
     "i_n114039",
@@ -734,7 +776,19 @@ class DataProvider extends ChangeNotifier {
     "i_n114069",
     "i_n114070",
     "i_n114071",
-    "i_n114072"
+    "i_n114072",
+    "i_n114073",
+    "i_n114074",
+    "i_n114075",
+    "i_n114076",
+    "i_n114077",
+    "i_n114078",
+    "i_n114079",
+    "i_n114080",
+    "i_n114081",
+    "i_n114082",
+    "i_n114083",
+    "i_n114084"
   ];
 
   final StreamController<List<Character>> _suggestionStreamController =
